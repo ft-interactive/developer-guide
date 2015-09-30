@@ -14,13 +14,15 @@ You can then edit files within `./app` while the dev server is running.
 
 ## Deploying
 
-It's automatic: just edit code and push to the default branch, **production**. (Or better still, work in a different branch, then when Travis reports that it builds OK, merge it into production.)
+It's automatic: just edit code and push to the default branch, **production**.
 
-Whenever new code is pushed to the production branch, Travis will build it, commit the built `dist` to master, and push this back to Github. (The master branch is what Github serves as the public website.)
+Better still, do your work in a different branch and open a pull request – then, once Travis has reported that your changes are OK, merge it into production.
+
+How it works: Whenever new code is pushed to the production branch, Travis will build it, commit the built `dist` to master, and push this back to Github. (The master branch is what Github serves as the public website.)
 
 Problems? Check the logs on [Travis](https://travis-ci.org/ft-interactive/ft-interactive.github.io).
 
-Note that Github can be slow to update the website. But if you can see your changes in the [master branch](https://github.com/ft-interactive/ft-interactive.github.io/tree/master), they should appear eventually.
+Note that Github Pages can be slow to update. But as long as you can see your changes in the [master branch](https://github.com/ft-interactive/ft-interactive.github.io/tree/master), they should appear eventually.
 
 
 ## Debugging the live site
