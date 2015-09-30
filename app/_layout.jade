@@ -1,6 +1,22 @@
-doctype
-html
+doctype html
+html(lang="en")
   head
+    title= 'FT ' + siteTitle
+    script(src="https://polyfill.webservices.ft.com/v1/polyfill.min.js?features=default")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css")
+    link(rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-techdocs@^4.2.1,o-fonts@^1.8.2,o-grid@^3.2.6")
     link(rel="stylesheet" href="/main.css")
+    link(rel="shortcut icon" href="http://bertha.ig.ft.com/favicon.ico")
   body
+    header.o-header(data-o-component='o-header')
+      .o-header__container
+        .o-header__inner
+          .o-header__primary
+            .o-header__primary__left
+              a.o-header__logo.o-header__logo--ft(href='http://www.ft.com')
+                abbr(title='Financial Times') FT
+                h1.o-header__title= siteTitle
+
     != yield
+
+    script(src="https://build.origami.ft.com/bundles/js?modules=o-techdocs@^4.2.1,o-fonts@^1.8.2,o-grid@^3.2.6")
