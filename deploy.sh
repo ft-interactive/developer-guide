@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
 echo ""
-echo "AUTOMATIC DEPLOY SCRIPT"
-echo "======================="
+echo "TRAVIS -> GITHUB DEPLOYMENT"
+echo "==========================="
 echo ""
 
 # skip deployment if this isn't the production branch
-echo "Current branch: $TRAVIS_BRANCH"
 if [ $TRAVIS_BRANCH != "production" ]; then
-  echo "Skipping deploy as this is not the production branch."
+  echo "SKIPPING DEPLOY as this is not the production branch."
   exit 0
 fi
 
+# fail if the token is missing
 if [ ! $GITHUB_TOKEN ]; then
   echo "No GITHUB_TOKEN variable! Cannot deploy!"
   exit 1
