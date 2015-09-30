@@ -7,5 +7,9 @@
   "scripts": {
     "build": "harp compile app dist",
     "start": "harp server app"
+  },
+  "engines": {
+    "node": ">= 4",
+    "npm" : ">= 3"
   }
 }
