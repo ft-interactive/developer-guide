@@ -1,4 +1,4 @@
-# [ft-interactive.github.io](http://ft-interactive.github.io) [![Build Status](https://travis-ci.org/ft-interactive/ft-interactive.github.io.svg)](https://travis-ci.org/ft-interactive/ft-interactive.github.io)
+# [ft-interactive.github.io](http://ft-interactive.github.io) [![Build Status][travis-image]][travis-url]
 
 > Guides to coding, designing and visualising.
 
@@ -28,3 +28,7 @@ Note that Github Pages can be slow to update. But as long as you can see your ch
 ## Debugging the live site
 
 If the site works correctly locally, but you're having problems with the live site, try running `npm run build` and serving up the `dist` directory using [srvlr](https://github.com/kavanagh/srvlr) or something similar, then you can debug it.
+
+
+[travis-url]: https://travis-ci.org/ft-interactive/ft-interactive.github.io
+[travis-image]: https://img.shields.io/travis/ft-interactive/ft-interactive.github.io.svg?style=flat-square
