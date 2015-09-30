@@ -1,16 +1,15 @@
-# ft-interactive.github.io [![Build Status](https://travis-ci.org/ft-interactive/ft-interactive.github.io.svg)](https://travis-ci.org/ft-interactive/ft-interactive.github.io)
+# [ft-interactive.github.io](http://ft-interactive.github.io) [![Build Status](https://travis-ci.org/ft-interactive/ft-interactive.github.io.svg)](https://travis-ci.org/ft-interactive/ft-interactive.github.io)
 
 > Guides to coding, designing and visualising.
->
-> http://ft-interactive.github.io
 
-This is a [Github Pages](https://pages.github.com/) organisation site.
 
 ## Quick start
 
 1. Clone this repository and run `npm install`
 2. Start the development server: `npm start`
-3. Edit stuff in the `app` directory.
+3. Open the URL (from the command output) in your browser.
+
+You can then edit files within `./app` while the dev server is running.
 
 
 ## Deploying
