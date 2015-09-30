@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
+echo ""
+echo "AUTOMATIC DEPLOY SCRIPT"
+echo "======================="
+echo ""
+
 # skip deployment if this isn't the production branch
-if [ `git rev-parse --abbrev-ref HEAD` != "production" ]; then
+$current_branch=`git rev-parse --abbrev-ref HEAD`
+echo "Current branch: $current_branch"
+if [ $current_branch != "production" ]; then
   echo "Skipping deploy as this is not the production branch."
   exit 0
 fi
