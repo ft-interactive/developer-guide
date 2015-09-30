@@ -10,7 +10,7 @@ echo "\$TRAVIS_BRANCH: $TRAVIS_BRANCH"
 echo "\$TRAVIS_PULL_REQUEST: $TRAVIS_PULL_REQUEST"
 echo ""
 
-if [[ $TRAVIS_PULL_REQUEST || $TRAVIS_BRANCH != "production" ]]; then
+if [[ $TRAVIS_PULL_REQUEST != "false" || $TRAVIS_BRANCH != "production" ]]; then
   echo "Skipping deploy as this is not the production branch."
   exit 0
 fi
