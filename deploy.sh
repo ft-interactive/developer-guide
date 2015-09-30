@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 
+# skip deployment if this isn't the production branch
+if [ `git rev-parse --abbrev-ref HEAD` != "production" ]; then
+  echo "Skipping deploy as this is not the production branch."
+  exit 0
+fi
+
+if [ ! $GITHUB_TOKEN ]; then
+  echo "No GITHUB_TOKEN variable! Cannot deploy!"
+  exit 1
+fi
+
+
+# The remainder of this script is from here:
 # https://github.com/X1011/git-directory-deploy
 
 
@@ -83,7 +96,7 @@ if [ $setup ]; then
 	git --work-tree "$deploy_directory" checkout --orphan $deploy_branch
 	git --work-tree "$deploy_directory" rm -r "*"
 	git --work-tree "$deploy_directory" add --all
-	git --work-tree "$deploy_directory" commit -m "initial publish"$'\n\n'"last commit: $commit_hash"
+	git --work-tree "$deploy_directory" commit -m "initial publish"$'\n\n'"generated from commit $commit_hash"
 	git push $repo $deploy_branch
 	restore_head
 	exit
@@ -119,7 +132,7 @@ case $diff in
 	1)
 		set_user_id
 		git --work-tree "$deploy_directory" commit -m \
-			"publish: $commit_title"$'\n\n'"last commit: $commit_hash"
+			"publish: $commit_title"$'\n\n'"generated from commit $commit_hash"
 
 		disable_expanded_output
 		#--quiet is important here to avoid outputting the repo URL, which may contain a secret token
