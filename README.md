@@ -1,41 +1,39 @@
-# ft-interactive.github.io
+# ft-interactive.github.io [![Build Status](https://travis-ci.org/ft-interactive/ft-interactive.github.io.svg)](https://travis-ci.org/ft-interactive/ft-interactive.github.io)
 
-[![Build Status](https://travis-ci.org/ft-interactive/ft-interactive.github.io.svg)](https://travis-ci.org/ft-interactive/ft-interactive.github.io)
+http://ft-interactive.github.io
 
 Guides to coding, designing and visualising.
 
+
 > **Status: Experimental**
 > 
-> Currently it's using HarpJS, but that can easily change.
-
-## Branches
-
-- `development` - for the website's source code (mostly within the `./app` directory) and project-related stuff (such as this readme).
-
-- `master` – used by Github as the public web root for [ft-interactive.github.io](http://ft-interactive.github.io) – only built, web-facing files go in this branch (i.e. the contents of `dist`).
-
-> Note that the default branch of this repo is `development`.
+> Currently contains a very basic HarpJS app, but this is not set in stone. The main focus atm is getting the workflow/deployment nice.
 
 
-## Editing this website
+## Developing
 
-**To run the site locally:**
+Start the development server:
 
 ```sh
 $ npm start
 ```
 
+The command output should tell you the local URL – CMD-click to open it in your browser.
+
 Then hack on files in the `./app` directory.
 
 
-**To deploy:**
+## Deploying
 
-```sh
-$ npm run deploy
-```
+It's automatic – just edit code and push to the default branch, **production**. 
 
-What that does:
+Travis will build it, commit the built `dist` to the [master(https://github.com/ft-interactive/ft-interactive.github.io/tree/master) branch] and push this back to Github. (The master branch is what Github serves as the public website.)
 
-1. builds the site from `app` to `dist`
-2. runs `./deploy.sh`, a shell script that commits the contents of `dist` to the `master` branch and pushes the change up to the `origin` remote.
-3. hopefully within a few minutes, Github will notice the change and the site will update.
+Problems? Check the logs on [Travis](https://travis-ci.org/ft-interactive/ft-interactive.github.io).
+
+Note that Github can be slow to update the website. But if you can see your changes in the [master branch](https://github.com/ft-interactive/ft-interactive.github.io/tree/master), they should appear eventually.
+
+
+## Debugging the live site
+
+If the site works correctly locally, but you're having problems with the live site, try running `npm run build` and then serving up the `dist` directory. This should be the same as the live version.
