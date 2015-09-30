@@ -6,6 +6,7 @@ echo "==========================="
 echo ""
 
 # skip deployment if this isn't the production branch
+echo "\$TRAVIS_BRANCH: $TRAVIS_BRANCH"
 if [ $TRAVIS_BRANCH != "production" ]; then
   echo "SKIPPING DEPLOY as this is not the production branch."
   exit 0
