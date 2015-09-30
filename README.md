@@ -7,9 +7,10 @@ Guides to coding, designing and visualising.
 
 ## Note on branches
 
-Unusually, the default branch of this repo is named `development`, not `master`.
+Unusually, the default branch of this repo is `development`.
 
 - `development` - this is the branch for the website's source code (mostly within the `./app` directory) and project-related stuff (such as this readme).
+
 - `master` – this is used by Github as the public web root for [ft-interactive.github.io](http://ft-interactive.github.io). Only built files go in this branch (i.e. the contents of `dist`).
 
 
