@@ -1,9 +1,5 @@
 language: node_js
 node_js:
   - '4.1'
-# before_script:
-#   - bower install
 script:
-  - npm run build
-after_success:
-  - ./deploy.sh
+  - 'npm run build && ./deploy.sh'
