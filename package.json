@@ -1,12 +1,12 @@
 {
   "name": "ft-interactive.github.io",
   "devDependencies": {
-    "bluebird": "^2.10.1",
     "harp": "^0.19.0"
   },
   "private": true,
   "scripts": {
     "build": "harp compile app dist",
+    "deploy": "npm run build && ./deploy.sh",
     "start": "harp server app"
   }
 }
