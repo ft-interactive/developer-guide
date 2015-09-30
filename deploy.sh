@@ -13,7 +13,7 @@ default_username=${GIT_DEPLOY_USERNAME:-deploy.sh}
 default_email=${GIT_DEPLOY_EMAIL:-}
 
 #repository to deploy to. must be readable and writable.
-repo=${GIT_DEPLOY_REPO:-origin}
+repo=https://$GITHUB_TOKEN@github.com/ft-interactive/ft-interactive.github.io.git
 
 # Parse arg flags
 while : ; do
