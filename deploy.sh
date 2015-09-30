@@ -6,7 +6,7 @@ echo "======================="
 echo ""
 
 # skip deployment if this isn't the production branch
-$current_branch=`git rev-parse --abbrev-ref HEAD`
+current_branch=`git rev-parse --abbrev-ref HEAD`
 echo "Current branch: $current_branch"
 if [ $current_branch != "production" ]; then
   echo "Skipping deploy as this is not the production branch."
