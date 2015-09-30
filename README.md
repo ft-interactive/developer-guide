@@ -31,4 +31,4 @@ If the site works correctly locally, but you're having problems with the live si
 
 
 [travis-url]: https://travis-ci.org/ft-interactive/ft-interactive.github.io
-[travis-image]: https://img.shields.io/travis/ft-interactive/ft-interactive.github.io.svg?style=flat-square
+[travis-image]: https://travis-ci.org/ft-interactive/ft-interactive.github.io.svg
