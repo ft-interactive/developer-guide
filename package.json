@@ -6,7 +6,6 @@
   "private": true,
   "scripts": {
     "build": "harp compile app dist",
-    "deploy": "npm run build && ./deploy.sh",
     "start": "harp server app"
   }
 }
