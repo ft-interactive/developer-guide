@@ -1,6 +1,8 @@
-# [ft-interactive.github.io](http://ft-interactive.github.io) [![Build Status][travis-image]][travis-url]
+# [Developer guide](https://ft-interactive.github.io) [![Build Status][travis-image]][travis-url]
 
-> Guides to coding, designing and visualising.
+> The Interactive News team's guides to coding, designing and visualising.
+
+[Go to the site](https://ft-interactive.github.io)
 
 
 ## Quick start
