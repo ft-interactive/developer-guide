@@ -1,0 +1,94 @@
+.o-techdocs-content
+  h1 Publication formats
+  p.o-techdocs-leadbody We have a few ways of getting things on the web.
+
+  //---------------------------------------------
+  h2#sites Static sites/pages
+  :markdown
+    These are simple static web apps hosted on our own development server. They are 'static' in the sense they are simple files served by Apache – but they often load data from an external service like Bertha and then render it using something like D3.
+
+    They are often started using our [boilerplate](#) and typically use some a few Origami components like o-header and o-footer.
+
+    They should generally be responsive.
+
+  h3#sites-examples Examples
+  :markdown
+    - [Boko Haram timeline](http://ig.ft.com/sites/2015/boko-haram-timeline/)
+    - ...
+    - ...
+
+  h3#sites-how How to do one
+  p TKTKT
+
+  //---------------------------------------------
+  h2#wrapper-page Falcon wrapper pages
+
+  p Wrapper pages are good for when we want to make a normal-looking (Falcon-style) FT page, with standard FT navigation, but with not much else going on on the page. This gives us a lot of control so we can do layout/scroll-related things like sticky in-page navigation. (However, we're still limited by the unresponsive Falcon design.)
+
+  h3#wrapper-page-examples Examples
+  :markdown
+    The vast majority of our wrapper pages have been used for timeline stories. These have a 'sticky timeline' component that reacts to page scrolling.
+
+    With a right rail:
+    - [Mark Carney Timeline](http://ig.ft.com/sites/2014/carney-timeline/) (uses [this wrapper](http://www.ft.com/thirdpartywrapper/carneytimeline))
+    - [The battle for Simandou](http://ig.ft.com/sites/2014/guinea-timeline/) (uses [this wrapper](http://www.ft.com/thirdpartywrapper/simandou))
+
+    Full width:
+    - [Countdown to Paris](http://ig.ft.com/sites/2015/paris-climate-timeline/) (uses [this wrapper](http://www.ft.com/thirdpartywrapper/worldeurope))
+    - [Crisis in Ukraine](http://ig.ft.com/sites/2015/ukraine-timeline/) (uses the same wrapper as the Paris one)
+
+  h3#wrapper-page-how-to How to do one
+  :markdown
+    1. Get a wrapper set up by Mus, or choose one that already exists (see below). You can always use an existing one during development and switch it later.
+    2. Set up something on the server that will download your wrapper page and dynamically inject your own content into it. You probably want your main content to go in `.editorialSection .freestyle[data-comp-index=0]`. You may also want to inject scripts/styles into the wrapper's `<head>`.
+
+  h4#wrapper-page-php ...using a PHP script
+  :markdown
+    Example `index.php`:
+
+        <?php
+        require 'CENSORED/wrapper-page-injector.php'; // check an example timeline on the server for the real path
+
+        print injectContentIntoWrapper(
+          file_get_contents('content.html'),
+          'http://www.ft.com/thirdpartywrapper/worldeurope'
+        );
+
+    - `content.html` is your own web application (without any FT header/nav/footer etc).
+    - The `injectContentIntoWrapper` will load the given wrapper URL. Then it will select key pieces of your content page, and copy them over to the correct locations in the wrapper page HTML:
+      - it copies the `<title>` from the content page to the wrapper page
+      - it takes any scripts and stylesheets in the content page's `<head>` and injects them into the wrapper page's `<head>`
+      - it takes the entire inner HTML of `<body>` from the content page, and injects it into `.editorialSection .freestyle[data-comp-index=0]` in the wrapper page.
+
+  h4#wrapper-page-node ...using Node
+  p ???
+
+  h3#existing-wrappers Existing wrappers
+
+  :markdown
+    Although some of these seem to be named for a particular story, you may reuse them if they appear to be set up how you would want them.
+
+    Some have a right-rail (so your content has to fit in 600px), others have a full-width space (972px).
+
+    - `http://www.ft.com/thirdpartywrapper/worldeurope`
+    - `http://www.ft.com/thirdpartywrapper/irannuclearsites`
+    - `http://www.ft.com/thirdpartywrapper/caribbeanmap`
+    - `http://www.ft.com/thirdpartywrapper/the-big-read`
+    - `http://www.ft.com/thirdpartywrapper/carneytimeline`
+    - `http://www.ft.com/thirdpartywrapper/simandou`
+    - `http://www.ft.com/thirdpartywrapper/businessbarometer`
+    - `http://www.ft.com/intl/thirdpartywrapper/bankcriminalcharges`
+    - `http://www.ft.com/thirdpartywrapper/retail`
+    - `http://www.ft.com/thirdpartywrapper/sanctions`
+    - `http://www.ft.com/thirdpartywrapper/uk`
+    - `http://www.ft.com/thirdpartywrapper/innovationinhealthcare`
+
+
+
+  //---------------------------------------------
+  h2#iframes iframes
+  p TKTKTK
+
+
+
+  //---------------------------------------------

@@ -7,7 +7,7 @@ html(lang="en")
     link(rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-techdocs@^4.2.1,o-fonts@^1.8.2,o-grid@^3.2.6")
     link(rel="stylesheet" href="/main.css")
     link(rel="shortcut icon" href="http://bertha.ig.ft.com/favicon.ico")
-  body
+  body.o-techdocs
     header.o-header(data-o-component='o-header')
       .o-header__container
         .o-header__inner
@@ -17,6 +17,39 @@ html(lang="en")
                 abbr(title='Financial Times') FT
                 h1.o-header__title= siteTitle
 
-    != yield
+    .o-techdocs-layout
+      //- Navigation - optional, omit for single page docs.  o-techdocs-sidebar container allows an in-page navigation list to be appended after the site navigation
+      .o-techdocs-sidebar
+        //- NO NEED FOR SITE NAV YET
+        ul.o-techdocs-nav
+          li: a(href='/') Home
+          li: a(href='/formats') Formats
+        //-   li
+        //-     a(href='#') Link title 2
+        //-   li
+        //-     a(href='#') Link title 3
+        //-   li
+        //-     a(href='#') Link title 4
+        //-     ul.o-techdocs-nav.o-techdocs-nav--sub
+        //-       li
+        //-         a(href='#') Sub link 1
+        //-       li(aria-selected='true')
+        //-         a(href='#') Sub link 2 (selected)
+        //-       li
+        //-         a(href='#') Sub link 3
+        //-       li
+        //-         a(href='#') Sub link 4
+        //-   li
+        //-     a(href='#') Link title 5
+      
+      .o-techdocs-main
+        != yield
+
+    footer.o-techdocs-footer
+      .o-techdocs-footer__inner
+        p.o-techdocs-footer__secondary
+          a(href='http://github.com/ft-interactive') FT Interactive on GitHub
+        p
+          | © THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.
 
     script(src="https://build.origami.ft.com/bundles/js?modules=o-techdocs@^4.2.1,o-fonts@^1.8.2,o-grid@^3.2.6")
