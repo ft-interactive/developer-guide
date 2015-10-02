@@ -1,57 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><title>FT Interactive Dev Guide</title><script src="https://polyfill.webservices.ft.com/v1/polyfill.min.js?features=default"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"><link rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-techdocs@^4.2.1,o-fonts@^1.8.2,o-grid@^3.2.6"><link rel="stylesheet" href="/main.css"><link rel="shortcut icon" href="http://bertha.ig.ft.com/favicon.ico"></head><body class="o-techdocs"><header data-o-component="o-header" class="o-header"><div class="o-header__container"><div class="o-header__inner"><div class="o-header__primary"><div class="o-header__primary__left"><a href="http://www.ft.com" class="o-header__logo o-header__logo--ft"><abbr title="Financial Times">FT</abbr><h1 class="o-header__title">Interactive Dev Guide</h1></a></div></div></div></div></header><div class="o-techdocs-layout"><div class="o-techdocs-sidebar"><ul class="o-techdocs-nav"><li><a href="/">Home</a></li><li><a href="/formats">Formats</a></li></ul></div><div class="o-techdocs-main"><div class="o-techdocs-content"><h1>Publication formats</h1><p class="o-techdocs-leadbody">We have a few ways of getting things on the web.</p><h2 id="sites">Static sites/pages</h2><p>These are simple static web apps hosted on our own development server. They are &#39;static&#39; in the sense they are simple files served by Apache – but they often load data from an external service like Bertha and then render it using something like D3.</p>
-<p>They are often started using our <a href="#">boilerplate</a> and typically use some a few Origami components like o-header and o-footer.</p>
-<p>They should generally be responsive.</p>
-<h3 id="sites-examples">Examples</h3><ul>
-<li><a href="http://ig.ft.com/sites/2015/boko-haram-timeline/">Boko Haram timeline</a></li>
-<li>...</li>
-<li>...</li>
-</ul>
-<h3 id="sites-how">How to do one</h3><p>TKTKT</p><h2 id="wrapper-page">Falcon wrapper pages</h2><p>Wrapper pages are good for when we want to make a normal-looking (Falcon-style) FT page, with standard FT navigation, but with not much else going on on the page. This gives us a lot of control so we can do layout/scroll-related things like sticky in-page navigation. (However, we're still limited by the unresponsive Falcon design.)</p><h3 id="wrapper-page-examples">Examples</h3><p>The vast majority of our wrapper pages have been used for timeline stories. These have a &#39;sticky timeline&#39; component that reacts to page scrolling.</p>
-<p>With a right rail:</p>
-<ul>
-<li><a href="http://ig.ft.com/sites/2014/carney-timeline/">Mark Carney Timeline</a> (uses <a href="http://www.ft.com/thirdpartywrapper/carneytimeline">this wrapper</a>)</li>
-<li><a href="http://ig.ft.com/sites/2014/guinea-timeline/">The battle for Simandou</a> (uses <a href="http://www.ft.com/thirdpartywrapper/simandou">this wrapper</a>)</li>
-</ul>
-<p>Full width:</p>
-<ul>
-<li><a href="http://ig.ft.com/sites/2015/paris-climate-timeline/">Countdown to Paris</a> (uses <a href="http://www.ft.com/thirdpartywrapper/worldeurope">this wrapper</a>)</li>
-<li><a href="http://ig.ft.com/sites/2015/ukraine-timeline/">Crisis in Ukraine</a> (uses the same wrapper as the Paris one)</li>
-</ul>
-<h3 id="wrapper-page-how-to">How to do one</h3><ol>
-<li>Get a wrapper set up by Mus, or choose one that already exists (see below). You can always use an existing one during development and switch it later.</li>
-<li>Set up something on the server that will download your wrapper page and dynamically inject your own content into it. You probably want your main content to go in <code>.editorialSection .freestyle[data-comp-index=0]</code>. You may also want to inject scripts/styles into the wrapper&#39;s <code>&lt;head&gt;</code>.</li>
-</ol>
-<h4 id="wrapper-page-php">...using a PHP script</h4><p>Example <code>index.php</code>:</p>
-<pre><code>&lt;?php
-require &#39;CENSORED/wrapper-page-injector.php&#39;; // check an example timeline on the server for the real path
-
-print injectContentIntoWrapper(
-  file_get_contents(&#39;content.html&#39;),
-  &#39;http://www.ft.com/thirdpartywrapper/worldeurope&#39;
-);
-</code></pre><ul>
-<li><code>content.html</code> is your own web application (without any FT header/nav/footer etc).</li>
-<li>The <code>injectContentIntoWrapper</code> will load the given wrapper URL. Then it will select key pieces of your content page, and copy them over to the correct locations in the wrapper page HTML:<ul>
-<li>it copies the <code>&lt;title&gt;</code> from the content page to the wrapper page</li>
-<li>it takes any scripts and stylesheets in the content page&#39;s <code>&lt;head&gt;</code> and injects them into the wrapper page&#39;s <code>&lt;head&gt;</code></li>
-<li>it takes the entire inner HTML of <code>&lt;body&gt;</code> from the content page, and injects it into <code>.editorialSection .freestyle[data-comp-index=0]</code> in the wrapper page.</li>
-</ul>
-</li>
-</ul>
-<h4 id="wrapper-page-node">...using Node</h4><p>???</p><h3 id="existing-wrappers">Existing wrappers</h3><p>Although some of these seem to be named for a particular story, you may reuse them if they appear to be set up how you would want them.</p>
-<p>Some have a right-rail (so your content has to fit in 600px), others have a full-width space (972px).</p>
-<ul>
-<li><code>http://www.ft.com/thirdpartywrapper/worldeurope</code></li>
-<li><code>http://www.ft.com/thirdpartywrapper/irannuclearsites</code></li>
-<li><code>http://www.ft.com/thirdpartywrapper/caribbeanmap</code></li>
-<li><code>http://www.ft.com/thirdpartywrapper/the-big-read</code></li>
-<li><code>http://www.ft.com/thirdpartywrapper/carneytimeline</code></li>
-<li><code>http://www.ft.com/thirdpartywrapper/simandou</code></li>
-<li><code>http://www.ft.com/thirdpartywrapper/businessbarometer</code></li>
-<li><code>http://www.ft.com/intl/thirdpartywrapper/bankcriminalcharges</code></li>
-<li><code>http://www.ft.com/thirdpartywrapper/retail</code></li>
-<li><code>http://www.ft.com/thirdpartywrapper/sanctions</code></li>
-<li><code>http://www.ft.com/thirdpartywrapper/uk</code></li>
-<li><code>http://www.ft.com/thirdpartywrapper/innovationinhealthcare</code></li>
-</ul>
-<h2 id="iframes">iframes</h2><p>TKTKTK</p></div></div></div><footer class="o-techdocs-footer"><div class="o-techdocs-footer__inner"><p class="o-techdocs-footer__secondary"><a href="http://github.com/ft-interactive">FT Interactive on GitHub</a></p><p>© THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.</p></div></footer><script src="https://build.origami.ft.com/bundles/js?modules=o-techdocs@^4.2.1,o-fonts@^1.8.2,o-grid@^3.2.6"></script></body></html>
+<!DOCTYPE html><html lang="en"><head><title>FT Interactive Dev Guide</title><script src="https://polyfill.webservices.ft.com/v1/polyfill.min.js?features=default"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"><link rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-techdocs@^4.2.1,o-fonts@^1.8.2,o-grid@^3.2.6"><link rel="stylesheet" href="/main.css"><link rel="shortcut icon" href="http://bertha.ig.ft.com/favicon.ico"></head><body class="o-techdocs"><header data-o-component="o-header" class="o-header"><div class="o-header__container"><div class="o-header__inner"><div class="o-header__primary"><div class="o-header__primary__left"><a href="http://www.ft.com" class="o-header__logo o-header__logo--ft"><abbr title="Financial Times">FT</abbr><h1 class="o-header__title">Interactive Dev Guide</h1></a></div></div></div></div></header><div class="o-techdocs-layout"><div class="o-techdocs-sidebar"><ul class="o-techdocs-nav"><li><a href="/">Home</a></li><li><a href="/formats/">Formats</a><ul class="o-techdocs-nav o-techdocs-nav--sub"><li><a href="/formats/sites/">Static sites/pages</a></li><li><a href="/formats/wrappers/">Falcon wrapper pages</a></li><li><a href="/formats/iframes/">IFrames</a></li><li><a href="/formats/heroku/">Heroku apps</a></li></ul></li></ul></div><div class="o-techdocs-main"><div class="o-techdocs-content"><h1>Publication formats</h1><p class="o-techdocs-leadbody">We have a few ways of getting things on the web.</p><div class="o-grid-row"><div data-o-grid-colspan="12 M4"><a href="/formats/sites" class="o-techdocs-card"><div class="o-techdocs-card__context"><div class="o-techdocs-card__heading"><div class="o-techdocs-card__title">Static sites/pages</div></div></div><div class="o-techdocs-card__content">Standalone, responsive web apps hosted on the IG server.</div></a></div><div data-o-grid-colspan="hide M1"></div><div data-o-grid-colspan="12 M4"><a href="/formats/iframes" class="o-techdocs-card"><div class="o-techdocs-card__context"><div class="o-techdocs-card__heading"><div class="o-techdocs-card__title">IFrames</div></div></div><div class="o-techdocs-card__content">Rarely used now, but content can be embedded in an iframe inside an FT.com article.</div></a></div><div data-o-grid-colspan="12 M4"><a href="/formats/wrappers" class="o-techdocs-card"><div class="o-techdocs-card__context"><div class="o-techdocs-card__heading"><div class="o-techdocs-card__title">Falcon wrapper pages</div></div></div><div class="o-techdocs-card__content">Wrappers are FT.com template pages that we can inject our content into.</div></a></div><div data-o-grid-colspan="hide M1"></div><div data-o-grid-colspan="12 M4"><a href="/formats/heroku" class="o-techdocs-card"><div class="o-techdocs-card__context"><div class="o-techdocs-card__heading"><div class="o-techdocs-card__title">Heroku apps</div></div></div><div class="o-techdocs-card__content">For projects that have a significant serverside element.</div></a></div></div></div></div></div><footer class="o-techdocs-footer"><div class="o-techdocs-footer__inner"><p class="o-techdocs-footer__secondary"><a href="http://github.com/ft-interactive">FT Interactive on GitHub</a></p><p>© THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.</p></div></footer><script src="https://build.origami.ft.com/bundles/js?modules=o-techdocs@^4.2.1,o-fonts@^1.8.2,o-grid@^3.2.6"></script><script>// add aria-selected true where appropriate
+[].slice.apply(document.querySelectorAll('.o-techdocs-nav a')).forEach(function (el) {
+  console.log('a', el);
+  if (el.getAttribute('href') === window.location.pathname) {
+    el.closest('li').setAttribute('aria-selected', 'true');
+  }
+});</script></body></html>
