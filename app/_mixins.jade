@@ -1,0 +1,8 @@
+mixin card(link, heading, content)
+  div(data-o-grid-colspan='12 M4')
+    a.o-techdocs-card(href=link)
+      .o-techdocs-card__context
+        .o-techdocs-card__heading
+          .o-techdocs-card__title= heading
+          //- .o-techdocs-card__subtitle 
+      .o-techdocs-card__content= content

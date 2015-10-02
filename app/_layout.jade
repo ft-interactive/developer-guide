@@ -18,29 +18,34 @@ html(lang="en")
                 h1.o-header__title= siteTitle
 
     .o-techdocs-layout
-      //- Navigation - optional, omit for single page docs.  o-techdocs-sidebar container allows an in-page navigation list to be appended after the site navigation
       .o-techdocs-sidebar
-        //- NO NEED FOR SITE NAV YET
         ul.o-techdocs-nav
           li: a(href='/') Home
-          li: a(href='/formats') Formats
-        //-   li
-        //-     a(href='#') Link title 2
-        //-   li
-        //-     a(href='#') Link title 3
-        //-   li
-        //-     a(href='#') Link title 4
-        //-     ul.o-techdocs-nav.o-techdocs-nav--sub
-        //-       li
-        //-         a(href='#') Sub link 1
-        //-       li(aria-selected='true')
-        //-         a(href='#') Sub link 2 (selected)
-        //-       li
-        //-         a(href='#') Sub link 3
-        //-       li
-        //-         a(href='#') Sub link 4
-        //-   li
-        //-     a(href='#') Link title 5
+          li
+            a(href='/formats/') Formats
+            ul.o-techdocs-nav.o-techdocs-nav--sub
+              li: a(href='/formats/sites/') Static sites/pages
+              li: a(href='/formats/wrappers/') Falcon wrapper pages
+              li: a(href='/formats/iframes/') IFrames
+              li: a(href='/formats/heroku/') Heroku apps
+
+          //- li
+          //-   a(href='#') Link title 2
+          //- li
+          //-   a(href='#') Link title 3
+          //- li
+          //-   a(href='#') Link title 4
+          //-   ul.o-techdocs-nav.o-techdocs-nav--sub
+          //-     li
+          //-       a(href='#') Sub link 1
+          //-     li(aria-selected='true')
+          //-       a(href='#') Sub link 2 (selected)
+          //-     li
+          //-       a(href='#') Sub link 3
+          //-     li
+          //-       a(href='#') Sub link 4
+          //- li
+          //-   a(href='#') Link title 5
       
       .o-techdocs-main
         != yield
@@ -53,3 +58,11 @@ html(lang="en")
           | © THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.
 
     script(src="https://build.origami.ft.com/bundles/js?modules=o-techdocs@^4.2.1,o-fonts@^1.8.2,o-grid@^3.2.6")
+    script.
+      // add aria-selected true where appropriate
+      [].slice.apply(document.querySelectorAll('.o-techdocs-nav a')).forEach(function (el) {
+        console.log('a', el);
+        if (el.getAttribute('href') === window.location.pathname) {
+          el.closest('li').setAttribute('aria-selected', 'true');
+        }
+      });
