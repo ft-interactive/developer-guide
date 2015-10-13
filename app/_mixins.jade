@@ -1,3 +1,26 @@
+mixin card(d)
+  div(data-o-grid-colspan='12 M10 L4')
+    a.o-techdocs-card(href=d.link)
+      .o-techdocs-card__context
+        if d.icon
+          img.o-techdocs-card__icon(src='https://image.webservices.ft.com/v1/images/raw/' + encodeURIComponent(d.icon) + '?source=interactive-dev-guide&width=30&height=30&fit=contain')
+        if d.heading
+          .o-techdocs-card__heading
+            .o-techdocs-card__title= d.heading
+      if d.content
+        .o-techdocs-card__content= d.content
+
+
+mixin softwareCard(name)
+  - var d = software[name]
+  +card({
+    link: '/software/' + name + '/',
+    heading: d.title, 
+    content: d.description, 
+    icon: d.image
+  })
+
+
 mixin softwareHeader(name)
   - var d = software[name]
   .o-grid-row
@@ -13,19 +36,6 @@ mixin softwareHeader(name)
       if d.link
         br
         a(href=d.link)= d.linkText
-
-
-mixin softwareCard(name)
-  - var d = software[name]
-  div(data-o-grid-colspan='12 M10 L4')
-    a.o-techdocs-card(href='/software/' + name + '/')
-      .o-techdocs-card__context
-        if d.image
-          img.o-techdocs-card__icon(src='https://image.webservices.ft.com/v1/images/raw/' + encodeURIComponent(d.image) + '?source=interactive-dev-guide&width=30&height=30&fit=contain')
-        .o-techdocs-card__heading
-          .o-techdocs-card__title= d.title
-          //- .o-techdocs-card__subtitle 
-      .o-techdocs-card__content= d.description
 
 
 mixin checklist(...items)

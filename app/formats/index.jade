@@ -5,32 +5,23 @@ include ../_mixins.jade
   p.o-techdocs-leadbody We have a few ways of getting things on the web.
   
   .o-grid-row
-    +card(
-      '/formats/sites',
-      'Static sites/pages',
-      'Standalone, responsive web apps hosted on the IG server.'
-    )
-  
-    //- spacer hack - because I can't work out how to widen the gutter between o-grid elements
-    div(data-o-grid-colspan='hide M1')
-
-    +card(
-      '/formats/iframes',
-      'IFrames',
-      'Rarely used now, but content can be embedded in an iframe inside an FT.com article.'
-    )
-
-    +card(
-      '/formats/wrappers',
-      'Falcon wrapper pages',
-      'Wrappers are FT.com template pages that we can inject our content into.'
-    )
-    
-    //- another spacer hack
-    div(data-o-grid-colspan='hide M1')
-
-    +card(
-      '/formats/heroku',
-      'Heroku apps',
-      'For projects that have a significant serverside element.'
-    )
+    +card({
+      link: '/formats/sites',
+      heading: 'Static sites/pages',
+      content: 'Standalone, responsive web apps hosted on the IG server.'
+    })
+    +card({
+      link: '/formats/iframes',
+      heading: 'IFrames',
+      content: 'Rarely used now, but content can be embedded in an iframe inside an FT.com article.'
+    })
+    +card({
+      link: '/formats/wrappers',
+      heading: 'Falcon wrapper pages',
+      content: 'Wrappers are FT.com template pages that we can inject our content into.'
+    })
+    +card({
+      link: '/formats/heroku',
+      heading: 'Heroku apps',
+      content: 'For projects that have a significant serverside element.'
+    })
