@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head><title>FT Interactive Dev Guide</title><script src="https://polyfill.webservices.ft.com/v1/polyfill.min.js?features=default"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"><link rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-techdocs@^5.0.0,o-fonts@^1.8.2,o-grid@^4.0.0,o-forms@^2.0.0"><link rel="stylesheet" href="/main.css"><link rel="shortcut icon" href="http://bertha.ig.ft.com/favicon.ico"></head><body class="o-techdocs"><header data-o-component="o-header" class="o-header"><div class="o-header__container"><div class="o-header__inner"><div class="o-header__primary"><div class="o-header__primary__left"><a href="/" class="o-header__logo o-header__logo--ft"><abbr title="Financial Times">FT</abbr><h1 class="o-header__title">Interactive Dev Guide</h1></a></div></div></div></div></header><div class="o-techdocs-container"><div class="o-techdocs-layout"><div class="o-techdocs-sidebar"><ul class="o-techdocs-nav"><li><span>Machine setup guides</span><ul class="o-techdocs-nav o-techdocs-nav--sub"><li><a href="/setup/mac/">Mac OS X</a></li><li><a href="/setup/windows/">Windows</a></li></ul></li><li class="break-before"><span>Software</span><ul class="o-techdocs-nav o-techdocs-nav--sub"><li><a href="/software/atom/">Atom</a></li><li><a href="/software/brew/">Homebrew</a></li><li><a href="/software/git/">Git</a></li><li><a href="/software/github-desktop/">Github Desktop</a></li><li><a href="/software/iterm-2/">iTerm 2</a></li><li><a href="/software/node/">Node.js</a></li><li><a href="/software/sublime-text-3/">Sublime Text 3</a></li></ul></li><li class="break-before"><span>Services</span><ul class="o-techdocs-nav o-techdocs-nav--sub"><li><a href="/services/bertha/">Bertha</a></li><li><a href="/services/github/">Github</a></li><li><a href="/services/stash/">Stash</a></li></ul></li><li class="break-before"><span>Building interactives</span><ul class="o-techdocs-nav o-techdocs-nav--sub"><li><a>Using the interactive boilerplate</a></li><li><a>...</a></li><li><a>...</a></li></ul></li><li class="break-before"><a href="/formats/">Publication formats</a><ul class="o-techdocs-nav o-techdocs-nav--sub"><li><a href="/formats/sites/">Static sites/pages</a></li><li><a href="/formats/wrappers/">Falcon wrapper pages</a></li><li><a href="/formats/iframes/">IFrames</a></li><li><a href="/formats/heroku/">Heroku apps</a></li></ul></li></ul></div><div class="o-techdocs-main"><div class="o-techdocs-content"><div class="o-grid-row"><div data-o-grid-colspan="center 12 Muncenter M8 L6 XL5"><h1>Node.js</h1><p class="o-techdocs-leadbody">JavaScript runtime we use to build (and sometimes to serve) our web applications</p></div><div data-o-grid-colspan="center 6 Muncenter M4 L4 XL4"><img src="https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Fnodejs.org%2Fstatic%2Fimages%2Flogos%2Fnodejs.png?source=interactive-dev-guide&amp;width=424&amp;height=130"></div></div><h2 id="install-osx">Installing on Mac OS X</h2><p>Use Homebrew to install Node:</p>
+<pre><code class="lang-sh">$ brew install node
+</code></pre>
+<p>Alternatively, visit <a href="https://nodejs.org/">nodejs.org</a> and download the manual installer.</p>
+<h2 id="install-windows">Installing on Windows</h2><p>Visit <a href="https://nodejs.org/">nodejs.org</a> and download the installer.</p>
+<h2 id="bonus">Bonus steps</h2><p>The next steps are not strictly necessary, but are recommended.</p>
+<h3 id="avoid-having-to-use-sudo">Avoid having to use sudo</h3>
+<p><em>THIS SECTION NEEDS WRITING</em></p>
+<h3 id="upgrade-your-npm">Upgrade your npm</h3>
+<p>The version of <code>npm</code> that ships with Node is often out of date. Fortunately, npm is itself just an npm package. So you can use it to update itself:</p>
+<pre><code class="lang-sh">$ npm install --global npm
+</code></pre>
+<h3 id="check-your-install">Check your install</h3>
+<p>Check the versions of Node and npm. Hopefully you should have these versions or later.</p>
+<pre><code class="lang-sh">$ node --version
+v4.1.2
+</code></pre>
+<pre><code class="lang-sh">$ npm --version
+v4.1.2
+</code></pre>
+<h3 id="install-a-version-manager">Install a version manager</h3>
+<p>Sometimes you have to open an old project that requires an old version of Node, and it&#39;s a pain to have to uninstall and reinstall Node just for this purpose.</p>
+<p>A Node version manager lets you have multiple Nodes on your system at once, and switch between them with a simple command.</p>
+<p>There are two popular version managers for Node:</p>
+<ul>
+<li><a href="https://github.com/tj/n"><strong>n</strong></a></li>
+<li><a href="https://github.com/creationix/nvm"><strong>nvm</strong></a></li>
+</ul>
+<p>Use <strong>n</strong> if you&#39;re not sure.</p>
+</div></div></div></div><footer class="o-techdocs-footer"><div class="o-techdocs-footer__inner"><p class="o-techdocs-footer__secondary"><a href="http://github.com/ft-interactive">FT Interactive on GitHub</a></p><p>© THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.</p></div></footer><script>// add aria-selected=true where appropriate
+[].slice.apply(document.querySelectorAll('.o-techdocs-nav a')).forEach(function (el) {
+  if (el.getAttribute('href') === window.location.pathname) {
+    el.closest('li').setAttribute('aria-selected', 'true');
+  }
+});
+
+// make code snippets starting with '$' nicer
+[].slice.apply(document.querySelectorAll('code.language-sh')).forEach(function (el) {
+  if (el.innerHTML.substring(0, 2) === '$ ') {
+    el.innerHTML = '<span class="terminal-prompt">$ </span>' + el.innerHTML.substring(2);
+  }
+});
+</script><script src="https://build.origami.ft.com/bundles/js?modules=o-techdocs@^5.0.0,o-fonts@^1.8.2,o-grid@^4.0.0,o-forms@^2.0.0"></script></body></html>
