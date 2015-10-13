@@ -1,0 +1,34 @@
+include ../../_mixins.jade
+
+
+.o-techdocs-content
+  .o-grid-row
+    div(data-o-grid-colspan='center 11 Muncenter M8 L6 XL5')
+      h1 Git
+      p.o-techdocs-leadbody Command line tool for managing changes to code over time
+    div(data-o-grid-colspan='center 6 Muncenter M4 L3 XL2')
+      img(src='https://image.webservices.ft.com/v1/images/raw/' + encodeURIComponent('https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png') + '?source=interactive-dev-guide&width=500&height=500&fit=contain')
+    //- div(data-o-grid-colspan='hide L1')
+
+  h2#install-mac Install on Mac OS X
+  :marked
+    ```sh
+    $ brew install git
+    ```
+    
+  aside
+    p Note: your Mac may already have a version of `git` installed (you can check using `$ git --version`), but it might be an old version. It doesn't hurt to install a new one with `brew`. Plus later you can do `brew upgrade git` to update it.
+
+  h2#install-windows Install on Windows
+  :marked
+    Visit the [official Git website](https://git-scm.com/) and download the Windows build.
+
+  hr
+
+  h2#usage Usage
+  :marked
+    *TKTKTKT basic intro to commands? link to page about workflow?*
+
+  h2#see-also See also
+  +cardBrew
+  +cardGithubDesktop

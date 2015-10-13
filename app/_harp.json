@@ -1,5 +1,6 @@
 {
   "globals": {
-    "siteTitle": "Interactive Dev Guide"
+    "siteTitle": "Interactive Dev Guide",
+    "oModules": "o-techdocs@^5.0.0,o-fonts@^1.8.2,o-grid@^4.0.0,o-forms@^2.0.0"
   }
 }

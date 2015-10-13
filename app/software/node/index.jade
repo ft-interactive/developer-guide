@@ -1,0 +1,69 @@
+include ../../_mixins.jade
+
+.o-techdocs-content
+  .o-grid-row
+    div(data-o-grid-colspan='center 12 Muncenter M8 L6 XL5')
+      h1 Node.js
+      p.o-techdocs-leadbody JavaScript runtime we use to build (and sometimes to serve) our web applications
+    div(data-o-grid-colspan='center 6 Muncenter M4 L4 XL4')
+      img(src='https://image.webservices.ft.com/v1/images/raw/' + encodeURIComponent('https://nodejs.org/static/images/logos/nodejs.png') + '?source=interactive-dev-guide&width=424&height=130')
+    //- div(data-o-grid-colspan='hide L1')
+
+  h2#install-osx Installing on Mac OS X
+  :marked
+    Use Homebrew to install Node:
+
+    ```sh
+    $ brew install node
+    ```
+
+    Alternatively, visit [nodejs.org](https://nodejs.org/) and download the manual installer.
+
+  
+  h2#install-windows Installing on Windows
+  :marked
+    Visit [nodejs.org](https://nodejs.org/) and download the installer.
+
+
+  h2#bonus Bonus steps
+  :marked
+    The next steps are not strictly necessary, but are recommended.
+
+    ### Avoid having to use sudo
+
+    *THIS SECTION NEEDS WRITING*
+
+    ### Upgrade your npm
+
+    The version of `npm` that ships with Node is often out of date. Fortunately, npm is itself just an npm package. So you can use it to update itself:
+
+    ```sh
+    $ npm install --global npm
+    ```
+
+    ### Check your install
+
+    Check the versions of Node and npm. Hopefully you should have these versions or later.
+
+    ```sh
+    $ node --version
+    v4.1.2
+    ```
+
+    ```sh
+    $ npm --version
+    v4.1.2
+    ```
+
+    ### Install a version manager
+    
+    Sometimes you have to open an old project that requires an old version of Node, and it's a pain to have to uninstall and reinstall Node just for this purpose.
+
+    A Node version manager lets you have multiple Nodes on your system at once, and switch between them with a simple command.
+
+    There are two popular version managers for Node:
+
+    - [**n**](https://github.com/tj/n)
+    - [**nvm**](https://github.com/creationix/nvm)
+
+    Use **n** if you're not sure.

@@ -8,6 +8,9 @@ echo ""
 # skip deployment if this isn't the production branch
 echo "\$TRAVIS_BRANCH: $TRAVIS_BRANCH"
 echo "\$TRAVIS_PULL_REQUEST: $TRAVIS_PULL_REQUEST"
+echo "\$TRAVIS_JOB_NUMBER: $TRAVIS_JOB_NUMBER"
+echo "\$TRAVIS_OS_NAME: $TRAVIS_OS_NAME"
+echo "\$TRAVIS_NODE_VERSION: $TRAVIS_NODE_VERSION"
 echo ""
 
 if [[ $TRAVIS_PULL_REQUEST != "false" || $TRAVIS_BRANCH != "production" ]]; then

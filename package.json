@@ -1,15 +1,16 @@
 {
   "name": "ft-interactive.github.io",
   "devDependencies": {
-    "harp": "^0.19.0"
+    "harp": "^0.19.0",
+    "jstransformer-marked": "^1.0.1"
+  },
+  "engines": {
+    "node": ">= 4",
+    "npm": ">= 3"
   },
   "private": true,
   "scripts": {
     "build": "harp compile app dist",
     "start": "harp server app"
-  },
-  "engines": {
-    "node": ">= 4",
-    "npm" : ">= 3"
   }
 }

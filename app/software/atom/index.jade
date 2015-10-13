@@ -1,0 +1,35 @@
+include ../../_mixins.jade
+
+
+.o-techdocs-content
+  .o-grid-row
+    div(data-o-grid-colspan='center 11 Muncenter M8 L6 XL5')
+      h1 Atom
+      p.o-techdocs-leadbody A plugin-based text editor created by Github
+    div(data-o-grid-colspan='center 6 Muncenter M4 L3 XL2')
+      img(src='https://image.webservices.ft.com/v1/images/raw/' + encodeURIComponent('https://upload.wikimedia.org/wikipedia/commons/8/80/Atom_editor_logo.svg') + '?source=interactive-dev-guide&width=500&height=500&fit=contain')
+    //- div(data-o-grid-colspan='hide L1')
+
+  aside: p: b Website: <a href='https://atom.io/'>atom.io</a>
+
+  h2#install-osx Install on OS X
+  :marked
+    ```sh
+    $ brew cask install atom
+    ```
+    
+    Alternatively, visit [atom.io](http://atom.io/) to download and install it manually.
+
+  h2#install-windows Install on Windows
+  :marked
+    Visit [atom.io](http://atom.io/) to download the installer.
+
+  hr
+
+  h2#settings Recommended settings
+  :marked
+    *TKTKTK - suggested list of packages to install?*
+
+  h2#see-also See also
+  +cardST3
+  +cardBrew

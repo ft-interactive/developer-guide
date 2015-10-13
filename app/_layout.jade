@@ -4,7 +4,7 @@ html(lang="en")
     title= 'FT ' + siteTitle
     script(src="https://polyfill.webservices.ft.com/v1/polyfill.min.js?features=default")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css")
-    link(rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-techdocs@^4.2.1,o-fonts@^1.8.2,o-grid@^3.2.6")
+    link(rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=" + oModules)
     link(rel="stylesheet" href="/main.css")
     link(rel="shortcut icon" href="http://bertha.ig.ft.com/favicon.ico")
   body.o-techdocs
@@ -13,42 +13,55 @@ html(lang="en")
         .o-header__inner
           .o-header__primary
             .o-header__primary__left
-              a.o-header__logo.o-header__logo--ft(href='http://www.ft.com')
+              a.o-header__logo.o-header__logo--ft(href='/')
                 abbr(title='Financial Times') FT
                 h1.o-header__title= siteTitle
+    .o-techdocs-container
+      .o-techdocs-layout
+        .o-techdocs-sidebar
+          ul.o-techdocs-nav
+            //- li: a(href='/') Home
+            li
+              span Machine setup guides
+              ul.o-techdocs-nav.o-techdocs-nav--sub
+                li: a(href='/setup/mac/') Mac OS X
+                li: a(href='/setup/windows/') Windows
 
-    .o-techdocs-layout
-      .o-techdocs-sidebar
-        ul.o-techdocs-nav
-          li: a(href='/') Home
-          li
-            a(href='/formats/') Publication formats
-            ul.o-techdocs-nav.o-techdocs-nav--sub
-              li: a(href='/formats/sites/') Static sites/pages
-              li: a(href='/formats/wrappers/') Falcon wrapper pages
-              li: a(href='/formats/iframes/') IFrames
-              li: a(href='/formats/heroku/') Heroku apps
+            li.break-before
+              span Software
+              ul.o-techdocs-nav.o-techdocs-nav--sub
+                li: a(href='/software/atom/') Atom
+                li: a(href='/software/brew/') Homebrew
+                li: a(href='/software/git/') Git
+                li: a(href='/software/github-desktop/') Github Desktop
+                li: a(href='/software/iterm-2/') iTerm 2
+                li: a(href='/software/node/') Node.js
+                li: a(href='/software/sublime-text-3/') Sublime Text 3
 
-          //- li
-          //-   a(href='#') Link title 2
-          //- li
-          //-   a(href='#') Link title 3
-          //- li
-          //-   a(href='#') Link title 4
-          //-   ul.o-techdocs-nav.o-techdocs-nav--sub
-          //-     li
-          //-       a(href='#') Sub link 1
-          //-     li(aria-selected='true')
-          //-       a(href='#') Sub link 2 (selected)
-          //-     li
-          //-       a(href='#') Sub link 3
-          //-     li
-          //-       a(href='#') Sub link 4
-          //- li
-          //-   a(href='#') Link title 5
-      
-      .o-techdocs-main
-        != yield
+            li.break-before
+              span Services
+              ul.o-techdocs-nav.o-techdocs-nav--sub
+                li: a(href='/services/bertha/') Bertha
+                li: a(href='/services/github/') Github
+                li: a(href='/services/stash/') Stash
+
+            li.break-before
+              span Building interactives
+              ul.o-techdocs-nav.o-techdocs-nav--sub
+                li: a Using the interactive boilerplate
+                li: a ...
+                li: a ...
+
+            li.break-before
+              a(href='/formats/') Publication formats
+              ul.o-techdocs-nav.o-techdocs-nav--sub
+                li: a(href='/formats/sites/') Static sites/pages
+                li: a(href='/formats/wrappers/') Falcon wrapper pages
+                li: a(href='/formats/iframes/') IFrames
+                li: a(href='/formats/heroku/') Heroku apps
+
+        .o-techdocs-main
+          != yield
 
     footer.o-techdocs-footer
       .o-techdocs-footer__inner
@@ -57,12 +70,19 @@ html(lang="en")
         p
           | © THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.
 
-    script(src="https://build.origami.ft.com/bundles/js?modules=o-techdocs@^4.2.1,o-fonts@^1.8.2,o-grid@^3.2.6")
     script.
-      // add aria-selected true where appropriate
+      // add aria-selected=true where appropriate
       [].slice.apply(document.querySelectorAll('.o-techdocs-nav a')).forEach(function (el) {
-        console.log('a', el);
         if (el.getAttribute('href') === window.location.pathname) {
           el.closest('li').setAttribute('aria-selected', 'true');
         }
       });
+
+      // make code snippets starting with '$' nicer
+      [].slice.apply(document.querySelectorAll('code.language-sh')).forEach(function (el) {
+        if (el.innerHTML.substring(0, 2) === '$ ') {
+          el.innerHTML = '<span class="terminal-prompt">$ </span>' + el.innerHTML.substring(2);
+        }
+      });
+
+    script(src="https://build.origami.ft.com/bundles/js?modules=" + oModules)
