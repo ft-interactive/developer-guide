@@ -1,5 +1,5 @@
 mixin card(link, heading, content, logo)
-  div(data-o-grid-colspan='12 M4')
+  div(data-o-grid-colspan='12 M10 L4')
     a.o-techdocs-card(href=link)
       .o-techdocs-card__context
         if logo
@@ -8,10 +8,6 @@ mixin card(link, heading, content, logo)
           .o-techdocs-card__title= heading
           //- .o-techdocs-card__subtitle 
       .o-techdocs-card__content= content
-
-//- hack: I can't work out how to widen the gutter between o-grid elements
-mixin cardSpacer
-  div(data-o-grid-colspan='hide M1')
 
 
 //- individual reusable cards...
