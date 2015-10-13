@@ -17,6 +17,7 @@ body {}
 // make the $ (from command examples) unselectable
 .terminal-prompt {
   user-select: none;
+  color: teal;
 }
 
 .checklist {
@@ -33,4 +34,14 @@ body {}
   border-top: 1px dotted #ddd;
   margin-top: 10px;
   padding-top: 10px;
+}
+
+.badge {
+  // background: red;
+  text-align: center;
+
+  a {
+    line-height: 3;
+    text-decoration: none;
+  }
 }

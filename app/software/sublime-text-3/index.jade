@@ -1,27 +1,21 @@
 include ../../_mixins.jade
 
 .o-techdocs-content
-  h1 Sublime Text 3
-  p.o-techdocs-leadbody Reliable and fast text editor
+  +softwareHeader('sublime-text-3')
 
-  aside: p: b Website: <a href='http://www.sublimetext.com/3'>sublimetext.com/3</a>
+  aside: p ST3 is not free software, but it can be used for free indefinitely (if you don't mind it nagging you occasionally). It's currently in beta, but it's stable enough.
 
   :marked
-    ST3 is not free software, but it can be used for free indefinitely (if you don't mind it nagging you occasionally). It's currently in beta, but it's stable enough.
-
     ## Installing
 
-    ### Option 1 – manual download
-    Go to [sublimetext.com/3](http://www.sublimetext.com/3) and download it.
-
-    ### Option 2 – use Cask (OS X only)
-
-    If you're on a Mac and you've [installed Homebrew and Cask](#), just run this:
+    Using Cask:
 
     ```sh
     $ brew cask install sublime-text3
     ```
 
+    Alternatively, go to [sublimetext.com/3](http://www.sublimetext.com/3) and download it.
+    
     ## Get the `subl` command
 
     *TKTKTK*
@@ -40,5 +34,5 @@ include ../../_mixins.jade
     - *TKTKTK*
 
   h2#see-also See also
-  +cardAtom
-  +cardBrew
+  +softwareCard('atom')
+  +softwareCard('homebrew')

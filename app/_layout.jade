@@ -20,7 +20,6 @@ html(lang="en")
       .o-techdocs-layout
         .o-techdocs-sidebar
           ul.o-techdocs-nav
-            //- li: a(href='/') Home
             li
               span Machine setup guides
               ul.o-techdocs-nav.o-techdocs-nav--sub
@@ -30,13 +29,8 @@ html(lang="en")
             li.break-before
               span Software
               ul.o-techdocs-nav.o-techdocs-nav--sub
-                li: a(href='/software/atom/') Atom
-                li: a(href='/software/brew/') Homebrew
-                li: a(href='/software/git/') Git
-                li: a(href='/software/github-desktop/') Github Desktop
-                li: a(href='/software/iterm-2/') iTerm 2
-                li: a(href='/software/node/') Node.js
-                li: a(href='/software/sublime-text-3/') Sublime Text 3
+                each data, name in software
+                  li: a(href='/software/' + name + '/')= data.title
 
             li.break-before
               span Services

@@ -17,21 +17,19 @@ include ../../_mixins.jade
   p We also recommend installing iTerm 2, and a visual git GUI such as Github Desktop.
 
   p You can find guides for installing specific software below.
-  
-  hr
 
   h2#software Software
 
   h3#tools Development tools
   .o-grid-row
-    +cardBrew
-    +cardNode
-    +cardGit
-    +cardGithubDesktop
-    +cardITerm2
+    +softwareCard('homebrew')
+    +softwareCard('node')
+    +softwareCard('git')
+    +softwareCard('github-desktop')
+    +softwareCard('iterm-2')
 
   h3#text-editors Text editors
   p It's OK to install more than one.
   .o-grid-row
-    +cardST3
-    +cardAtom
+    +softwareCard('sublime-text-3')
+    +softwareCard('atom')

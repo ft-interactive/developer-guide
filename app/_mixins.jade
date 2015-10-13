@@ -1,72 +1,32 @@
-mixin card(link, heading, content, logo)
+mixin softwareHeader(name)
+  - var d = software[name]
+  .o-grid-row
+    div(data-o-grid-colspan='center 11 Muncenter M8 L6 XL6')
+      h1= d.title
+      p.o-techdocs-leadbody
+        if d.description
+          = d.description
+
+    div.badge(data-o-grid-colspan='center 6 M4 L3 Lpush1 XL2')
+      if d.image
+        img(src='https://image.webservices.ft.com/v1/images/raw/' + encodeURIComponent(d.image) + '?source=interactive-dev-guide&width=250&height=250&fit=contain')
+      if d.link
+        br
+        a(href=d.link)= d.linkText
+
+
+mixin softwareCard(name)
+  - var d = software[name]
   div(data-o-grid-colspan='12 M10 L4')
-    a.o-techdocs-card(href=link)
+    a.o-techdocs-card(href='/software/' + name + '/')
       .o-techdocs-card__context
-        if logo
-          img.o-techdocs-card__icon(src='https://image.webservices.ft.com/v1/images/raw/' + encodeURIComponent(logo) + '?source=interactive-dev-guide&width=30&height=30&fit=contain')
+        if d.image
+          img.o-techdocs-card__icon(src='https://image.webservices.ft.com/v1/images/raw/' + encodeURIComponent(d.image) + '?source=interactive-dev-guide&width=30&height=30&fit=contain')
         .o-techdocs-card__heading
-          .o-techdocs-card__title= heading
+          .o-techdocs-card__title= d.title
           //- .o-techdocs-card__subtitle 
-      .o-techdocs-card__content= content
+      .o-techdocs-card__content= d.description
 
-
-//- individual reusable cards...
-
-mixin cardBrew
-  +card(
-    '/software/brew',
-    'Homebrew (+ Cask)',
-    'Package manager for installing various developer tools on Mac OS X',
-    'https://avatars0.githubusercontent.com/u/1503512'
-  )
-
-mixin cardNode
-  +card(
-    '/software/node',
-    'Node.js',
-    'JavaScript runtime that we use to build (and sometimes serve) web apps',
-    'https://cldup.com/U-CUe6yMN3-2000x2000.png'
-  )
-
-mixin cardGit
-  +card(
-    '/software/git',
-    'Git',
-    'Command line tool for managing changes to code over time',
-    'https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png'
-  )
-
-mixin cardGithubDesktop
-  +card(
-    '/software/github-desktop',
-    'Github Desktop',
-    'Friendly GUI for git (can be used in conjunction with the git command)',
-    'https://assets-cdn.github.com/pinned-octocat.svg'
-  )
-
-mixin cardST3
-  +card(
-    '/software/sublime-text-3',
-    'Sublime Text 3',
-    'Reliable and fast text editor',
-    'https://upload.wikimedia.org/wikipedia/en/4/4c/Sublime_Text_Logo.png'
-  )
-
-mixin cardAtom
-  +card(
-    '/software/atom',
-    'Atom',
-    'Plugin-based text editor created by Github',
-    'https://upload.wikimedia.org/wikipedia/commons/8/80/Atom_editor_logo.svg'
-  )
-
-mixin cardITerm2
-  +card(
-    '/software/iterm-2',
-    'iTerm 2',
-    'A better terminal than the one that ships with OS X',
-    'https://cldup.com/GYgFz5SJyA.png'
-  )
 
 mixin checklist(...items)
   ul.checklist

@@ -1,28 +1,22 @@
 include ../../_mixins.jade
 
 .o-techdocs-content
-  .o-grid-row
-    div(data-o-grid-colspan='center 12 Muncenter M8 L6 XL5')
-      h1 Node.js
-      p.o-techdocs-leadbody JavaScript runtime we use to build (and sometimes to serve) our web applications
-    div(data-o-grid-colspan='center 6 Muncenter M4 L4 XL4')
-      img(src='https://image.webservices.ft.com/v1/images/raw/' + encodeURIComponent('https://nodejs.org/static/images/logos/nodejs.png') + '?source=interactive-dev-guide&width=424&height=130')
-    //- div(data-o-grid-colspan='hide L1')
+  +softwareHeader('node')
 
   h2#install-osx Installing on Mac OS X
   :marked
-    Use Homebrew to install Node:
+    Using Homebrew:
 
     ```sh
     $ brew install node
     ```
 
-    Alternatively, visit [nodejs.org](https://nodejs.org/) and download the manual installer.
+    Alternatively, go to [nodejs.org](https://nodejs.org/) and download the manual installer.
 
   
   h2#install-windows Installing on Windows
   :marked
-    Visit [nodejs.org](https://nodejs.org/) and download the installer.
+    Go to [nodejs.org](https://nodejs.org/) and download the installer.
 
 
   h2#bonus Bonus steps
@@ -67,3 +61,7 @@ include ../../_mixins.jade
     - [**nvm**](https://github.com/creationix/nvm)
 
     Use **n** if you're not sure.
+
+
+  h2#see-also See also
+  +softwareCard('homebrew')

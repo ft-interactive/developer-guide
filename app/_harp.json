@@ -1,6 +1,64 @@
 {
   "globals": {
     "siteTitle": "Interactive Dev Guide",
-    "oModules": "o-techdocs@^5.0.0,o-fonts@^1.8.2,o-grid@^4.0.0,o-forms@^2.0.0"
+    "oModules": "o-techdocs@^5.0.0,o-fonts@^1.8.2,o-grid@^4.0.0,o-forms@^2.0.0",
+
+    "software": {
+      "atom": {
+        "title": "Atom",
+        "description": "Plugin-based text editor created by Github",
+        "link": "https://atom.io/",
+        "linkText": "atom.io",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Atom_editor_logo.svg"
+      },
+
+      "git": {
+        "title": "Git",
+        "description": "Command line tool for managing changes to code over time",
+        "link": "https://git-scm.com/",
+        "linkText": "git-scm.com",
+        "image": "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
+      },
+
+      "github-desktop": {
+        "title": "Github Desktop",
+        "description": "Friendly GUI for git",
+        "link": "https://desktop.github.com/",
+        "linkText": "desktop.github.com",
+        "image": "https://assets-cdn.github.com/pinned-octocat.svg"
+      },
+
+      "homebrew": {
+        "title": "Homebrew",
+        "description": "Package manager for installing developer tools on OS X",
+        "link": "http://brew.sh/",
+        "linkText": "brew.sh",
+        "image": "https://avatars0.githubusercontent.com/u/1503512"
+      },
+
+      "iterm-2": {
+        "title": "iTerm 2",
+        "description": "A better terminal than the one that ships with OS X",
+        "link": "https://www.iterm2.com/",
+        "linkText": "iterm2.com",
+        "image": "https://cldup.com/GYgFz5SJyA.png"
+      },
+
+      "node": {
+        "title": "Node.js",
+        "description": "JavaScript runtime that we use to build (and sometimes serve) web apps",
+        "link": "https://nodejs.org/",
+        "linkText": "nodejs.org",
+        "image": "https://cldup.com/U-CUe6yMN3-2000x2000.png"
+      },
+
+      "sublime-text-3": {
+        "title": "Sublime Text 3",
+        "description": "Fast and reliable text editor",
+        "link": "http://www.sublimetext.com/3",
+        "linkText": "sublimetext.com/3",
+        "image": "https://upload.wikimedia.org/wikipedia/en/4/4c/Sublime_Text_Logo.png"
+      }
+    }
   }
 }

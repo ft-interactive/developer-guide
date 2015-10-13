@@ -1,0 +1,48 @@
+include ../../_mixins.jade
+
+.o-techdocs-content
+  +softwareHeader('homebrew')
+
+  p There are a few steps to setting up Homebrew, but it's worth it. It will make installing other tools much easier.
+  
+  h2#before 1. Before you start
+  :marked
+    You'll need to have a recent XCode on your machine for Homebrew to work.
+
+    1. Install or upgrade XCode using the Mac App Store ([direct link](macappstores://itunes.apple.com/gb/app/xcode/id497799835)). This might take a while.
+    2. Open XCode, accept the licence agreement, then quit XCode.
+
+  h2#install 2. Install Homebrew
+  :marked
+    Go to [brew.sh](http://brew.sh/) and follow the instructions.
+
+  p: i TKTKTK should we add stuff about brew doctor here? And do we need to add anything about taking ownership?
+
+  aside
+    :marked
+      After installing, your system will now have the `brew` command. This makes it easy to install other tools like [Node.js](/software/node/).
+
+  h2#cask 3. Install Homebrew Cask
+  :marked
+    This is a useful extension to Homebrew. While the `brew` command is generally for installing command line tools, `brew cask` is for installing Mac apps like Chrome, Sublime Text 3, etc. This is often much easier than manually downloading and installing apps from their websites or from the App Store.
+
+    To install:
+    
+    ```sh
+    $ brew install caskroom/cask/brew-cask
+    ```
+
+  br
+  aside
+    :marked
+      Now you can install lots of Mac apps with a simple command, for example:
+
+      ```sh
+      $ brew cask install sublime-text3
+      ```
+
+      The apps are kept in a central location managed by Cask, and then symlinked from your `~/Applications` folder.
+      
+      More information: [caskroom.io](http://caskroom.io/)
+
+      Search for available apps: [caskroom.io/search](http://caskroom.io/search)

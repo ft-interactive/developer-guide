@@ -1,30 +1,21 @@
 include ../../_mixins.jade
 
-
 .o-techdocs-content
-  .o-grid-row
-    div(data-o-grid-colspan='center 11 Muncenter M8 L6 XL5')
-      h1 iTerm 2
-      p.o-techdocs-leadbody A better terminal than the one that ships with OS X
-    div(data-o-grid-colspan='center 6 Muncenter M4 L3 XL2')
-      img(src='https://image.webservices.ft.com/v1/images/raw/' + encodeURIComponent('https://avatars0.githubusercontent.com/u/1503512') + '?source=interactive-dev-guide&width=500&height=500&fit=contain')
-    //- div(data-o-grid-colspan='hide L1')
+  +softwareHeader('iterm-2')
 
   h2#install Install
   :marked
-    The easiest way to install:
+    Using Cask:
 
     ```sh
     $ brew cask install iterm2
     ```
     
-    Alternatively, visit [iterm2.com](https://www.iterm2.com/) to download and install it manually.
-
-  hr
+    Alternatively, go to [iterm2.com](https://www.iterm2.com/) to download and install it manually.
 
   h2#usage Recommended settings
   :marked
     *TKTKTK*
 
   h2#see-also See also
-  +cardBrew
+  +softwareCard('homebrew')
