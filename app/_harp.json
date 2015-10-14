@@ -52,6 +52,14 @@
         "image": "https://cldup.com/U-CUe6yMN3-2000x2000.png"
       },
 
+      "sourcetree": {
+        "title": "SourceTree",
+        "description": "Comprehensive GUI for git",
+        "link": "https://www.sourcetreeapp.com/",
+        "linkText": "sourcetreeapp.com",
+        "image": "https://blog.sourcetreeapp.com/files/2014/09/SourceTreeNewIcon-300x300.png"
+      },
+
       "sublime-text-3": {
         "title": "Sublime Text 3",
         "description": "Fast and reliable text editor",

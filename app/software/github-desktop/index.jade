@@ -1,7 +1,36 @@
 include ../../_mixins.jade
+extends ../../_main-layout.jade
 
-.o-techdocs-content
-  +softwareHeader('github-desktop')
-  
-  :marked
-    *TKTKTK*
+block prepend title
+  | Github Desktop
+
+block main
+  .o-techdocs-content
+    +softwareHeader('github-desktop')
+
+    :marked
+      Github Desktop is a GUI app that can do basic git actions like committing and branching, as well as providing a good visual overview of the state of your project. It is not restricted to Github-hosted projects. It doesn't prevent you also using the `git` command (you can jump between the two).
+
+      If you want a more comprehensive GUI tool for git, try [SourceTree](sourcetree).
+
+    h2#install-osx Installing on OS X
+    :marked
+      Using Cask:
+
+      ```sh
+      $ brew cask install github-desktop
+      ```
+      
+      Alternatively, go to [sourcetreeapp.com](https://www.sourcetreeapp.com/) for manual installation.
+
+    h2#install-windows Installing on Windows
+    :marked
+      Go to [sourcetreeapp.com](https://www.sourcetreeapp.com/) to download the installer.
+
+    h2#usage Usage notes
+    :marked
+      *TKTKTK notes about using it with interactive projects?*
+
+    h2#see-also See also
+    +softwareCard('sourcetree')
+    +softwareCard('homebrew')

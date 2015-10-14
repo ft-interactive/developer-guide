@@ -2,30 +2,30 @@ include ../../_mixins.jade
 extends ../../_main-layout.jade
 
 block prepend title
-  | Atom
+  | SourceTree
 
 block main
   .o-techdocs-content
-    +softwareHeader('atom')
+    +softwareHeader('sourcetree')
 
     h2#install-osx Installing on OS X
     :marked
       Using Cask:
 
       ```sh
-      $ brew cask install atom
+      $ brew cask install sourcetree
       ```
       
-      Alternatively, go to [atom.io](http://atom.io/) for manual installation.
+      Alternatively, go to [sourcetreeapp.com](https://www.sourcetreeapp.com/) for manual installation.
 
     h2#install-windows Installing on Windows
     :marked
-      Go to [atom.io](http://atom.io/) to download the installer.
+      Go to [sourcetreeapp.com](https://www.sourcetreeapp.com/) to download the installer.
 
     h2#settings Recommended settings
     :marked
-      *TKTKTK - suggested list of packages to install?*
+      *TKTKTK*
 
     h2#see-also See also
-    +softwareCard('sublime-text-3')
+    +softwareCard('github-desktop')
     +softwareCard('homebrew')

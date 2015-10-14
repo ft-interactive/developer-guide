@@ -1,35 +1,39 @@
 include ../../_mixins.jade
+extends ../../_main-layout.jade
 
-.o-techdocs-content
-  h1 Mac OS X setup guide
-  //- p.o-techdocs-leadbody This page is a guide to setting up a Mac OS X computer for development.
+block prepend title
+  | Mac OS X setup guide
 
-  //- CHECKLIST
-  h2#checklist Checklist
-  +checklist(
-    'Upgrade to the latest version of OS X if possible',
-    'Install Homebrew',
-    'Install Node.js',
-    'Install git',
-    'Install a good text editor'
-  )
+block main
+  .o-techdocs-content
+    h1 Mac OS X setup guide
+    p.o-techdocs-leadbody How to prepare your machine for building interactive news apps
 
-  p We also recommend installing iTerm 2, and a visual git GUI such as Github Desktop.
+    h2#checklist Checklist
+    +checklist(
+      'Upgrade to the latest version of OS X if possible',
+      'Install Homebrew',
+      'Install Node.js',
+      'Install git',
+      'Install a good text editor'
+    )
 
-  p You can find guides for installing specific software below.
+    p We also recommend installing iTerm 2, and a visual git GUI such as Github Desktop.
 
-  h2#software Software
+    p You can find guides for installing specific software below.
 
-  h3#tools Development tools
-  .o-grid-row
-    +softwareCard('homebrew')
-    +softwareCard('node')
-    +softwareCard('git')
-    +softwareCard('github-desktop')
-    +softwareCard('iterm-2')
+    h2#software Software
 
-  h3#text-editors Text editors
-  p It's OK to install more than one.
-  .o-grid-row
-    +softwareCard('sublime-text-3')
-    +softwareCard('atom')
+    h3#tools Development tools
+    .o-grid-row
+      +softwareCard('homebrew')
+      +softwareCard('node')
+      +softwareCard('git')
+      +softwareCard('github-desktop')
+      +softwareCard('iterm-2')
+
+    h3#text-editors Text editors
+    p It's OK to install more than one.
+    .o-grid-row
+      +softwareCard('sublime-text-3')
+      +softwareCard('atom')

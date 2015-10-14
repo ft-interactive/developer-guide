@@ -1,32 +1,37 @@
 include ../../_mixins.jade
+extends ../../_main-layout.jade
 
-.o-techdocs-content
-  h1 Windows setup guide
+block prepend title
+  | Windows setup guide
 
-  aside
-    :markdown
-      **This guide is largely speculative and untested.**
+block main
+  .o-techdocs-content
+    h1 Windows setup guide
+    p.o-techdocs-leadbody How to prepare your machine for building interactive news apps
 
-  //- CHECKLIST
-  h2#checklist Checklist
-  +checklist(
-    'Install Node.js',
-    'Install git',
-    'Install a good text editor'
-  )
+    aside
+      :marked
+        **This guide is largely speculative and untested.**
 
-  p We also recommend installing an alternative console like [ConsoleZ](https://github.com/cbucher/console) (*NEED TO TEST*).
-  
-  h2#software Software
+    h2#checklist Checklist
+    +checklist(
+      'Install Node.js',
+      'Install git',
+      'Install a good text editor'
+    )
 
-  h3#tools Development tools
-  .o-grid-row
-    +softwareCard('node')
-    +softwareCard('git')
-    +softwareCard('github-desktop')
+    p We also recommend installing an alternative console like [ConsoleZ](https://github.com/cbucher/console) (*NEED TO TEST*).
+    
+    h2#software Software
 
-  h3#text-editors Text editors
-  p It's OK to install more than one.
-  .o-grid-row
-    +softwareCard('sublime-text-3')
-    +softwareCard('atom')
+    h3#tools Development tools
+    .o-grid-row
+      +softwareCard('node')
+      +softwareCard('git')
+      +softwareCard('github-desktop')
+
+    h3#text-editors Text editors
+    p It's OK to install more than one.
+    .o-grid-row
+      +softwareCard('sublime-text-3')
+      +softwareCard('atom')

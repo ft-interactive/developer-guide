@@ -1,12 +1,15 @@
 doctype html
 html(lang="en")
   head
-    title= 'FT ' + siteTitle
-    script(src="https://polyfill.webservices.ft.com/v1/polyfill.min.js?features=default")
-    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css")
-    link(rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=" + oModules)
-    link(rel="stylesheet" href="/main.css")
-    link(rel="shortcut icon" href="http://bertha.ig.ft.com/favicon.ico")
+    block head
+      title
+        block title
+          = ' – FT ' + siteTitle
+      script(src="https://polyfill.webservices.ft.com/v1/polyfill.min.js?features=default")
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css")
+      link(rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=" + oModules)
+      link(rel="stylesheet" href="/main.css")
+      link(rel="shortcut icon" href="http://bertha.ig.ft.com/favicon.ico")
   body.o-techdocs
     header.o-header(data-o-component='o-header')
       .o-header__container
@@ -16,6 +19,7 @@ html(lang="en")
               a.o-header__logo.o-header__logo--ft(href='/')
                 abbr(title='Financial Times') FT
                 h1.o-header__title= siteTitle
+
     .o-techdocs-container
       .o-techdocs-layout
         .o-techdocs-sidebar
@@ -27,24 +31,19 @@ html(lang="en")
                 li: a(href='/setup/windows/') Windows
 
             li.break-before
-              span Software
+              a Developing
               ul.o-techdocs-nav.o-techdocs-nav--sub
-                each data, name in software
-                  li: a(href='/software/' + name + '/')= data.title
+                li: a Style guides
+                li: a Origami
+                li: a Project Starter Kit
 
             li.break-before
-              span Services
+              span Resources
               ul.o-techdocs-nav.o-techdocs-nav--sub
-                li: a(href='/services/bertha/') Bertha
-                li: a(href='/services/github/') Github
-                li: a(href='/services/stash/') Stash
-
-            li.break-before
-              span Building interactives
-              ul.o-techdocs-nav.o-techdocs-nav--sub
-                li: a Using the interactive boilerplate
-                li: a ...
-                li: a ...
+                li: a IG web server
+                li: a Bertha
+                li: a Github
+                li: a Stash
 
             li.break-before
               a(href='/formats/') Publication formats
@@ -54,8 +53,14 @@ html(lang="en")
                 li: a(href='/formats/iframes/') IFrames
                 li: a(href='/formats/heroku/') Heroku apps
 
+            li.break-before
+              span Software
+              ul.o-techdocs-nav.o-techdocs-nav--sub
+                each data, name in software
+                  li: a(href='/software/' + name + '/')= data.title
+
         .o-techdocs-main
-          != yield
+          block main
 
     footer.o-techdocs-footer
       .o-techdocs-footer__inner

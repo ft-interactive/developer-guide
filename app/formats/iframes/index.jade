@@ -1,4 +1,11 @@
-.o-techdocs-content
-  h1 IFrames
-  :markdown
-    *This hasn't been written yet*
+include ../../_mixins.jade
+extends ../../_main-layout.jade
+
+block prepend title
+  | iframes
+
+block main
+  .o-techdocs-content
+    h1 iframes
+    :marked
+      *This hasn't been written yet*

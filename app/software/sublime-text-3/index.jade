@@ -1,38 +1,43 @@
 include ../../_mixins.jade
+extends ../../_main-layout.jade
 
-.o-techdocs-content
-  +softwareHeader('sublime-text-3')
+block prepend title
+  | Sublime Text 3
 
-  aside: p ST3 is not free software, but it can be used for free indefinitely (if you don't mind it nagging you occasionally). It's currently in beta, but it's stable enough.
+block main
+  .o-techdocs-content
+    +softwareHeader('sublime-text-3')
 
-  :marked
-    ## Installing
+    aside: p ST3 is not free software, but it can be used for free indefinitely (if you don't mind it nagging you occasionally). It's currently in beta, but it's stable enough.
 
-    Using Cask:
+    :marked
+      ## Installing
 
-    ```sh
-    $ brew cask install sublime-text3
-    ```
+      Using Cask:
 
-    Alternatively, go to [sublimetext.com/3](http://www.sublimetext.com/3) and download it.
-    
-    ## Get the `subl` command
+      ```sh
+      $ brew cask install sublime-text3
+      ```
 
-    *TKTKTK*
-    
-    ## Install some packages
+      Alternatively, go to [sublimetext.com/3](http://www.sublimetext.com/3) and download it.
+      
+      ## Get the `subl` command
 
-    ST3 has 'packages' that add extra functionality (such as syntax highlighting for languages that aren't supported out of the box). You should install Package Control, which in turn will help you install packages.
+      *TKTKTK*
+      
+      ## Install some packages
 
-    1. [Install Package Control](https://packagecontrol.io/installation).
-    2. Now [use](https://packagecontrol.io/docs/usage) it to install whatever packages you need.
+      ST3 has 'packages' that add extra functionality (such as syntax highlighting for languages that aren't supported out of the box). You should install Package Control, which in turn will help you install packages.
 
-    #### Recommended packages
+      1. [Install Package Control](https://packagecontrol.io/installation).
+      2. Now [use](https://packagecontrol.io/docs/usage) it to install whatever packages you need.
 
-    - [Emmet](https://packagecontrol.io/packages/Emmet)
-    - [Sass](https://packagecontrol.io/packages/Sass)
-    - *TKTKTK*
+      #### Recommended packages
 
-  h2#see-also See also
-  +softwareCard('atom')
-  +softwareCard('homebrew')
+      - [Emmet](https://packagecontrol.io/packages/Emmet)
+      - [Sass](https://packagecontrol.io/packages/Sass)
+      - *TKTKTK*
+
+    h2#see-also See also
+    +softwareCard('atom')
+    +softwareCard('homebrew')

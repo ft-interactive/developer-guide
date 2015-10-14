@@ -1,18 +1,25 @@
-.o-techdocs-content
-  h1 Static sites/pages
-  :markdown
-    These are simple static web apps hosted on our own development server. They are 'static' in the sense they are simple files served by Apache – but they often load data from an external service like Bertha and then render it using something like D3.
+include ../../_mixins.jade
+extends ../../_main-layout.jade
 
-    Static sites are often started using our [boilerplate](#) and typically use some a few Origami components like o-header and o-footer.
+block prepend title
+  | Static sites/pages
 
-    They should always be responsive.
+block main
+  .o-techdocs-content
+    h1 Static sites/pages
+    :marked
+      These are simple static web apps hosted on our own development server. They are 'static' in the sense they are simple files served by Apache – but they often load data from an external service like Bertha and then render it using something like D3.
 
-    ## Examples
+      Static sites are often started using our [boilerplate](#) and typically use some a few Origami components like o-header and o-footer.
 
-    - [Boko Haram timeline](http://ig.ft.com/sites/2015/boko-haram-timeline/)
-    - ...
-    - ...
+      They should always be responsive.
 
-    ## How to make one
-    
-    *This hasn't been written yet*
+      ## Examples
+
+      - [Boko Haram timeline](http://ig.ft.com/sites/2015/boko-haram-timeline/)
+      - ...
+      - ...
+
+      ## How to make one
+      
+      *This hasn't been written yet*

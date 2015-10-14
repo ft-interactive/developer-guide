@@ -1,115 +1,122 @@
-.o-techdocs-content
-  h1 Falcon wrapper pages
+include ../../_mixins.jade
+extends ../../_main-layout.jade
 
-  p.o-techdocs-leadbody Wrapper pages are regular (Falcon-style) FT pages – but with no content, only FT navigation and page furniture. We inject our own content into them before serving them to the user.
+block prepend title
+  | Falcon wrapper pages
 
-  :markdown
-    Here's an example of a [simple wrapper page](http://www.ft.com/thirdpartywrapper/worldeurope). Here's one [with a right rail](http://www.ft.com/thirdpartywrapper/bankcriminalcharges) (the right rail content appears to be on the left, but it will be pushed to the right when content is injected into it.)
+block main
+  .o-techdocs-content
+    h1 Falcon wrapper pages
 
-    Notice that each one is set up with a particular breadcrumb trail and highlighted navigation to give the impression that the page is in the normal CMS. In reality, it's a fake page that is not linked from anywhere.
+    p.o-techdocs-leadbody Wrapper pages are regular (Falcon-style) FT pages – but with no content, only FT navigation and page furniture. We inject our own content into them before serving them to the user.
 
-    ## How do we inject our content?
+    :marked
+      Here's an example of a [simple wrapper page](http://www.ft.com/thirdpartywrapper/worldeurope). Here's one [with a right rail](http://www.ft.com/thirdpartywrapper/bankcriminalcharges) (the right rail content appears to be on the left, but it will be pushed to the right when content is injected into it.)
 
-    It's just a matter of manipulating a string of HTML, and it happens server-side.
+      Notice that each one is set up with a particular breadcrumb trail and highlighted navigation to give the impression that the page is in the normal CMS. In reality, it's a fake page that is not linked from anywhere.
 
-    Here's an example:
+      ## How do we inject our content?
 
-    This [Paris timeline page](http://ig.ft.com/sites/2015/paris-climate-timeline/) is served from our IG server. But instead of `index.html`, the main file is an `index.php` script. This script loads the ["World > Europe" wrapper](http://www.ft.com/thirdpartywrapper/worldeurope) and injects our own content into it. Then it outputs the result.
+      It's just a matter of manipulating a string of HTML, and it happens server-side.
 
-    Wrapper pages are useful for when we want to do layout/scroll-related things, like sticky in-page navigation, but using the classic FT.com layout. But eventually wrappers will be obsolete when the FT switches over to Next.
+      Here's an example:
 
-    ## Live examples
+      This [Paris timeline page](http://ig.ft.com/sites/2015/paris-climate-timeline/) is served from our IG server. But instead of `index.html`, the main file is an `index.php` script. This script loads the ["World > Europe" wrapper](http://www.ft.com/thirdpartywrapper/worldeurope) and injects our own content into it. Then it outputs the result.
 
-    The vast majority of our wrapper pages have been used for timeline stories. These have a 'sticky timeline' component that reacts to page scrolling.
+      Wrapper pages are useful for when we want to do layout/scroll-related things, like sticky in-page navigation, but using the classic FT.com layout. But eventually wrappers will be obsolete when the FT switches over to Next.
 
-    With a right rail:
-    - [Mark Carney Timeline](http://ig.ft.com/sites/2014/carney-timeline/) (uses [this wrapper](http://www.ft.com/thirdpartywrapper/carneytimeline))
-    - [The battle for Simandou](http://ig.ft.com/sites/2014/guinea-timeline/) (uses [this wrapper](http://www.ft.com/thirdpartywrapper/simandou))
+      ## Live examples
 
-    Full width:
-    - [Countdown to Paris](http://ig.ft.com/sites/2015/paris-climate-timeline/) (uses [this wrapper](http://www.ft.com/thirdpartywrapper/worldeurope))
-    - [Crisis in Ukraine](http://ig.ft.com/sites/2015/ukraine-timeline/) (uses the same wrapper as the Paris one)
+      The vast majority of our wrapper pages have been used for timeline stories. These have a 'sticky timeline' component that reacts to page scrolling.
 
-    ## How to make one
+      With a right rail:
+      - [Mark Carney Timeline](http://ig.ft.com/sites/2014/carney-timeline/) (uses [this wrapper](http://www.ft.com/thirdpartywrapper/carneytimeline))
+      - [The battle for Simandou](http://ig.ft.com/sites/2014/guinea-timeline/) (uses [this wrapper](http://www.ft.com/thirdpartywrapper/simandou))
 
-    The basic process is:
+      Full width:
+      - [Countdown to Paris](http://ig.ft.com/sites/2015/paris-climate-timeline/) (uses [this wrapper](http://www.ft.com/thirdpartywrapper/worldeurope))
+      - [Crisis in Ukraine](http://ig.ft.com/sites/2015/ukraine-timeline/) (uses the same wrapper as the Paris one)
 
-    1. Get a wrapper set up by Mus, or choose one that already exists (see below). You can always use an existing one during development and switch it out later.
-    2. Set up *something* on the server that will download your wrapper page and dynamically inject your own content into it. You probably want your main content to go in `.editorialSection .freestyle[data-comp-index=0]`. You may also want to inject scripts/styles into the wrapper's `<head>`. And definitely inject something into the wrappers `<title>` element.
+      ## How to make one
 
-    ## Injecting using PHP
+      The basic process is:
 
-    This `index.php` is used for most of our timelines:
+      1. Get a wrapper set up by Mus, or choose one that already exists (see below). You can always use an existing one during development and switch it out later.
+      2. Set up *something* on the server that will download your wrapper page and dynamically inject your own content into it. You probably want your main content to go in `.editorialSection .freestyle[data-comp-index=0]`. You may also want to inject scripts/styles into the wrapper's `<head>`. And definitely inject something into the wrappers `<title>` element.
 
-        <?php
-        require 'CENSORED/wrapper-page-injector.php'; // check an example timeline on the FTP server for the real path!
+      ## Injecting using PHP
 
-        print injectContentIntoWrapper(
-          file_get_contents('content.html'),
-          'http://www.ft.com/thirdpartywrapper/worldeurope'
-        );
+      This `index.php` is used for most of our timelines:
 
-    - `content.html` is your own web application (without any FT header/nav/footer etc).
-    - The `injectContentIntoWrapper` will load the given wrapper URL. Then it will select key pieces of your content page, and copy them over to the correct locations in the wrapper page HTML:
-      - it copies the `<title>` from the content page to the wrapper page
-      - it takes any scripts and stylesheets in the content page's `<head>` and injects them into the wrapper page's `<head>`
-      - it takes the entire inner HTML of `<body>` from the content page, and injects it into `.editorialSection .freestyle[data-comp-index=0]` in the wrapper page.
+          <?php
+          require 'CENSORED/wrapper-page-injector.php'; // check an example timeline on the FTP server for the real path!
 
-    ## Injecting using Node
+          print injectContentIntoWrapper(
+            file_get_contents('content.html'),
+            'http://www.ft.com/thirdpartywrapper/worldeurope'
+          );
 
-    *This hasn't been written yet*
+      - `content.html` is your own web application (without any FT header/nav/footer etc).
+      - The `injectContentIntoWrapper` will load the given wrapper URL. Then it will select key pieces of your content page, and copy them over to the correct locations in the wrapper page HTML:
+        - it copies the `<title>` from the content page to the wrapper page
+        - it takes any scripts and stylesheets in the content page's `<head>` and injects them into the wrapper page's `<head>`
+        - it takes the entire inner HTML of `<body>` from the content page, and injects it into `.editorialSection .freestyle[data-comp-index=0]` in the wrapper page.
 
-    ## Available wrappers
-    
-    You can reuse any of these. Ignore the naming in the wrapper URLs – many have been given overly specific codenames relating to the articles they were first created for, but all that really matters is which navigation path is highlighted (as this is visible in the main nav and the breadcrumbs) and whether you want to do a full-width or narrow story.
+      ## Injecting using Node
 
-    If none of these suit you, request a new one.
+      *This hasn't been written yet*
 
-  .o-techdocs-table-wrapper
-    table
-      thead
-        tr
-          th Wrapper
-          th Available width
-      tbody
-        tr
-          td: a(href='http://www.ft.com/thirdpartywrapper/uk') UK
-          td 972px
-        tr
-          td: a(href='http://www.ft.com/thirdpartywrapper/sanctions') World
-          td 972px
-        tr
-          td: a(href='http://www.ft.com/thirdpartywrapper/worldeurope') World > Europe
-          td 972px
-        tr
-          td: a(href='http://www.ft.com/thirdpartywrapper/simandou') World > Africa
-          td 600px
-        tr
-          td: a(href='http://www.ft.com/thirdpartywrapper/irannuclearsites') World > Middle East & North Africa > Iran
-          td 972px
-        tr
-          td: a(href='http://www.ft.com/thirdpartywrapper/caribbeanmap') World > Latin America & Caribbean
-          td 972px
-        tr
-          td: a(href='http://www.ft.com/thirdpartywrapper/retail') Companies > Retail & Consumer
-          td 972px
-        tr
-          td: a(href='http://www.ft.com/thirdpartywrapper/the-big-read') Comment > The Big Read
-          td 600px
-        tr
-          td: a(href='http://www.ft.com/intl/thirdpartywrapper/bankcriminalcharges') Companies > Financials > Banks
-          td 600px
+      ## Available wrappers
+      
+      You can reuse any of these. Ignore the naming in the wrapper URLs – many have been given overly specific codenames relating to the articles they were first created for, but all that really matters is which navigation path is highlighted (as this is visible in the main nav and the breadcrumbs) and whether you want to do a full-width or narrow story.
 
-        //- THE FOLLOWING ARE PROBABLY NOT REUSABLE as they have article-specific breadcrumbs
-        //- tr
-        //-   td: a(href='http://www.ft.com/thirdpartywrapper/innovationinhealthcare') innovationinhealthcare
-        //-   td ?
-        //-   td ?
-        //- tr
-        //-   td: a(href='http://www.ft.com/thirdpartywrapper/carneytimeline') carneytimeline
-        //-   td ?
-        //-   td ?
-        //- tr
-        //-   td: a(href='http://www.ft.com/thirdpartywrapper/businessbarometer') businessbarometer
-        //-   td ?
-        //-   td ?
+      If none of these suit you, request a new one.
+
+    .o-techdocs-table-wrapper
+      table
+        thead
+          tr
+            th Wrapper
+            th Available width
+        tbody
+          tr
+            td: a(href='http://www.ft.com/thirdpartywrapper/uk') UK
+            td 972px
+          tr
+            td: a(href='http://www.ft.com/thirdpartywrapper/sanctions') World
+            td 972px
+          tr
+            td: a(href='http://www.ft.com/thirdpartywrapper/worldeurope') World > Europe
+            td 972px
+          tr
+            td: a(href='http://www.ft.com/thirdpartywrapper/simandou') World > Africa
+            td 600px
+          tr
+            td: a(href='http://www.ft.com/thirdpartywrapper/irannuclearsites') World > Middle East & North Africa > Iran
+            td 972px
+          tr
+            td: a(href='http://www.ft.com/thirdpartywrapper/caribbeanmap') World > Latin America & Caribbean
+            td 972px
+          tr
+            td: a(href='http://www.ft.com/thirdpartywrapper/retail') Companies > Retail & Consumer
+            td 972px
+          tr
+            td: a(href='http://www.ft.com/thirdpartywrapper/the-big-read') Comment > The Big Read
+            td 600px
+          tr
+            td: a(href='http://www.ft.com/intl/thirdpartywrapper/bankcriminalcharges') Companies > Financials > Banks
+            td 600px
+
+          //- THE FOLLOWING ARE PROBABLY NOT REUSABLE as they have article-specific breadcrumbs
+          //- tr
+          //-   td: a(href='http://www.ft.com/thirdpartywrapper/innovationinhealthcare') innovationinhealthcare
+          //-   td ?
+          //-   td ?
+          //- tr
+          //-   td: a(href='http://www.ft.com/thirdpartywrapper/carneytimeline') carneytimeline
+          //-   td ?
+          //-   td ?
+          //- tr
+          //-   td: a(href='http://www.ft.com/thirdpartywrapper/businessbarometer') businessbarometer
+          //-   td ?
+          //-   td ?

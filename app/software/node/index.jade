@@ -1,67 +1,72 @@
 include ../../_mixins.jade
+extends ../../_main-layout.jade
 
-.o-techdocs-content
-  +softwareHeader('node')
+block prepend title
+  | Node.js
 
-  h2#install-osx Installing on Mac OS X
-  :marked
-    Using Homebrew:
+block main
+  .o-techdocs-content
+    +softwareHeader('node')
 
-    ```sh
-    $ brew install node
-    ```
+    h2#install-osx Installing on Mac OS X
+    :marked
+      Using Homebrew:
 
-    Alternatively, go to [nodejs.org](https://nodejs.org/) and download the manual installer.
+      ```sh
+      $ brew install node
+      ```
 
-  
-  h2#install-windows Installing on Windows
-  :marked
-    Go to [nodejs.org](https://nodejs.org/) and download the installer.
+      Alternatively, go to [nodejs.org](https://nodejs.org/) and download the manual installer.
 
-
-  h2#bonus Bonus steps
-  :marked
-    The next steps are not strictly necessary, but are recommended.
-
-    ### Avoid having to use sudo
-
-    *THIS SECTION NEEDS WRITING*
-
-    ### Upgrade your npm
-
-    The version of `npm` that ships with Node is often out of date. Fortunately, npm is itself just an npm package. So you can use it to update itself:
-
-    ```sh
-    $ npm install --global npm
-    ```
-
-    ### Check your install
-
-    Check the versions of Node and npm. Hopefully you should have these versions or later.
-
-    ```sh
-    $ node --version
-    v4.1.2
-    ```
-
-    ```sh
-    $ npm --version
-    3.3.6
-    ```
-
-    ### Install a version manager
     
-    Sometimes you have to open an old project that requires an old version of Node, and it's a pain to have to uninstall and reinstall Node just for this purpose.
-
-    A Node version manager lets you have multiple Nodes on your system at once, and switch between them with a simple command.
-
-    There are two popular version managers for Node:
-
-    - [**n**](https://github.com/tj/n)
-    - [**nvm**](https://github.com/creationix/nvm)
-
-    Use **n** if you're not sure.
+    h2#install-windows Installing on Windows
+    :marked
+      Go to [nodejs.org](https://nodejs.org/) and download the installer.
 
 
-  h2#see-also See also
-  +softwareCard('homebrew')
+    h2#bonus Bonus steps
+    :marked
+      The next steps are not strictly necessary, but are recommended.
+
+      ### Avoid having to use sudo
+
+      *THIS SECTION NEEDS WRITING*
+
+      ### Upgrade your npm
+
+      The version of `npm` that ships with Node is often out of date. Fortunately, npm is itself just an npm package. So you can use it to update itself:
+
+      ```sh
+      $ npm install --global npm
+      ```
+
+      ### Check your install
+
+      Check the versions of Node and npm. Hopefully you should have these versions or later.
+
+      ```sh
+      $ node --version
+      v4.1.2
+      ```
+
+      ```sh
+      $ npm --version
+      3.3.6
+      ```
+
+      ### Install a version manager
+      
+      Sometimes you have to open an old project that requires an old version of Node, and it's a pain to have to uninstall and reinstall Node just for this purpose.
+
+      A Node version manager lets you have multiple Nodes on your system at once, and switch between them with a simple command.
+
+      There are two popular version managers for Node:
+
+      - [**n**](https://github.com/tj/n)
+      - [**nvm**](https://github.com/creationix/nvm)
+
+      Use **n** if you're not sure.
+
+
+    h2#see-also See also
+    +softwareCard('homebrew')
