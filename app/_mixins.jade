@@ -1,3 +1,12 @@
+mixin related(...names)
+  br
+  br
+  aside
+    h5 See also
+    each name in names
+      +softwareCard(name)
+
+
 mixin card(d)
   div(data-o-grid-colspan='12 M10 L4')
     a.o-techdocs-card(href=d.link)
@@ -44,4 +53,4 @@ mixin checklist(...items)
       li: label
         input(type='checkbox')
         | &nbsp;
-        = val
+        span= val

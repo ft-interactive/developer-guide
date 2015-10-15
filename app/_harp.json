@@ -22,7 +22,7 @@
 
       "github-desktop": {
         "title": "Github Desktop",
-        "description": "Friendly GUI for git",
+        "description": "Simple GUI tool for git",
         "link": "https://desktop.github.com/",
         "linkText": "desktop.github.com",
         "image": "https://assets-cdn.github.com/pinned-octocat.svg"
@@ -54,10 +54,18 @@
 
       "sourcetree": {
         "title": "SourceTree",
-        "description": "Comprehensive GUI for git",
+        "description": "Comprehensive GUI tool for git",
         "link": "https://www.sourcetreeapp.com/",
         "linkText": "sourcetreeapp.com",
         "image": "https://blog.sourcetreeapp.com/files/2014/09/SourceTreeNewIcon-300x300.png"
+      },
+
+      "slack": {
+        "title": "Slack",
+        "description": "Team chat tool",
+        "link": "https://slack.com/",
+        "linkText": "slack.com",
+        "image": "http://iosicongallery.com/iosicongallery/img/512/slack-2014.png"
       },
 
       "sublime-text-3": {

@@ -5,23 +5,7 @@ block prepend title
   | iTerm 2
 
 block main
-
   .o-techdocs-content
     +softwareHeader('iterm-2')
-
-    h2#install Install
-    :marked
-      Using Cask:
-
-      ```sh
-      $ brew cask install iterm2
-      ```
-      
-      Alternatively, go to [iterm2.com](https://www.iterm2.com/) to download and install it manually.
-
-    h2#usage Recommended settings
-    :marked
-      *TKTKTK*
-
-    h2#see-also See also
-    +softwareCard('homebrew')
+    include:marked content.md
+    +related('homebrew')

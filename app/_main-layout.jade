@@ -25,32 +25,36 @@ html(lang="en")
         .o-techdocs-sidebar
           ul.o-techdocs-nav
             li
-              span Machine setup guides
+              span Machine setup
               ul.o-techdocs-nav.o-techdocs-nav--sub
                 li: a(href='/setup/mac/') Mac OS X
                 li: a(href='/setup/windows/') Windows
 
             li.break-before
-              a Developing
+              span Guides
               ul.o-techdocs-nav.o-techdocs-nav--sub
-                li: a Style guides
-                li: a Origami
-                li: a Project Starter Kit
+                li: a(href='/guides/style-guides/') Style guides
+                li: a(href='/guides/project-starter-kit/') Project Starter Kit
+                li: a(href='/guides/git-workflow/') Git workflow
+                li: a(href='/guides/publishing-checklist/') Publishing checklist
 
             li.break-before
               span Resources
               ul.o-techdocs-nav.o-techdocs-nav--sub
-                li: a IG web server
-                li: a Bertha
-                li: a Github
-                li: a Stash
+                li: a(href='/resources/ig-web-server/') IG web server
+                li: a(href='/resources/bertha/') Bertha
+                li: a(href='/resources/github/') Github
+                li: a(href='/resources/stash/') Stash
+                li: a(href='/resources/origami/') Origami
+                li: a(href='/resources/image-service/') Image service
+                li: a(href='/resources/polyfill-service/') Polyfill service
 
             li.break-before
               a(href='/formats/') Publication formats
               ul.o-techdocs-nav.o-techdocs-nav--sub
-                li: a(href='/formats/sites/') Static sites/pages
+                li: a(href='/formats/static-sites/') Static sites/pages
                 li: a(href='/formats/wrappers/') Falcon wrapper pages
-                li: a(href='/formats/iframes/') IFrames
+                li: a(href='/formats/iframes/') iframes
                 li: a(href='/formats/heroku/') Heroku apps
 
             li.break-before
@@ -77,11 +81,16 @@ html(lang="en")
         }
       });
 
-      // make code snippets starting with '$' nicer
-      [].slice.apply(document.querySelectorAll('code.language-sh')).forEach(function (el) {
-        if (el.innerHTML.substring(0, 2) === '$ ') {
-          el.innerHTML = '<span class="terminal-prompt">$ </span>' + el.innerHTML.substring(2);
-        }
+      // make CLI snippets (any code blocks marked "sh") nicer using techdocs classes
+      [].slice.apply(document.querySelectorAll('code.language-sh')).forEach(function (codeEl) {
+        codeEl.innerHTML = codeEl.innerHTML.split('\n').map(function (line) {
+          if (!line) return line;
+          return line.substring(0, 2) === '$ ' ?
+            '<kbd>' + line.substring(2) + '</kbd>' :
+            '<output>' + line + '</output>';
+        }).join('\n').trim();
+        codeEl.className = 'nohighlight';
+        codeEl.parentNode.className = 'cli';
       });
 
     script(src="https://build.origami.ft.com/bundles/js?modules=" + oModules)

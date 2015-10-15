@@ -7,25 +7,5 @@ block prepend title
 block main
   .o-techdocs-content
     +softwareHeader('sourcetree')
-
-    h2#install-osx Installing on OS X
-    :marked
-      Using Cask:
-
-      ```sh
-      $ brew cask install sourcetree
-      ```
-      
-      Alternatively, go to [sourcetreeapp.com](https://www.sourcetreeapp.com/) for manual installation.
-
-    h2#install-windows Installing on Windows
-    :marked
-      Go to [sourcetreeapp.com](https://www.sourcetreeapp.com/) to download the installer.
-
-    h2#settings Recommended settings
-    :marked
-      *TKTKTK*
-
-    h2#see-also See also
-    +softwareCard('github-desktop')
-    +softwareCard('homebrew')
+    include:marked content.md
+    +related('github-desktop', 'homebrew')
