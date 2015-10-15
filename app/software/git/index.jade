@@ -7,26 +7,5 @@ block prepend title
 block main
   .o-techdocs-content
     +softwareHeader('git')
-
-    h2#install-mac Install on Mac OS X
-    :marked
-      Using homebrew:
-
-      ```sh
-      $ brew install git
-      ```
-
-    aside
-      p Note: your Mac may already have a version of `git` installed (you can check using `$ git --version`), but it might be an old one. It doesn't hurt to install the latest version with `brew`. This also allows you to do `brew upgrade git` to update it easily.
-
-    h2#install-windows Install on Windows
-    :marked
-      Go to [git-scm.com](https://git-scm.com/) and download the Windows build.
-
-    h2#usage Usage
-    :marked
-      *TKTKTKT basic intro to commands? link to page about workflow?*
-
-    h2#see-also See also
-    +softwareCard('github-desktop')
-    +softwareCard('homebrew')
+    include:marked content.md
+    +related('github-desktop', 'sourcetree')

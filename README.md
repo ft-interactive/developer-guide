@@ -13,6 +13,22 @@
 
 You can then edit files within `./app` while the dev server is running.
 
+#### Use BrowserSync
+
+You can proxy the dev server through BrowserSync for automatic page reloads.
+
+To install: `npm install -g browser-sync`
+
+Just run the site as usual using `npm start`, then run the following command in a separate terminal tab:
+
+```sh
+$ browser-sync start --proxy "localhost:9000" --files "app/**/*"
+```
+
+Then open the local URL that BrowserSync prints out (usually `http://localhost:3000`).
+
+See BrowserSync's [CLI options](http://www.browsersync.io/docs/command-line/#command-line-options) (and more details on the general [options page](http://www.browsersync.io/docs/options/)).
+
 
 ## Deploying
 
@@ -29,7 +45,11 @@ Note that Github Pages can be slow to update. But as long as you can see your ch
 
 ## Debugging the live site
 
-If the site works correctly locally, but you're having problems with the live site, try running `npm run build` and serving up the `dist` directory using [srvlr](https://github.com/kavanagh/srvlr) or something similar, then you can debug it.
+If everything works locally, but there are problems with the deployed website:
+
+1. Do a production build: `npm run build` (this should create a `dist` directory, and should complete without error).
+2. Serve up the `dist` directory using [srvlr](https://github.com/kavanagh/srvlr) or something similar.
+3. Debug away.
 
 
 [travis-url]: https://travis-ci.org/ft-interactive/ft-interactive.github.io
