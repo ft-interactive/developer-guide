@@ -43,7 +43,7 @@ SublimeLinter-contrib-scss-lint
 });
 
 // make CLI snippets (any code blocks marked "sh") nicer using techdocs classes
-[].slice.apply(document.querySelectorAll('code.language-sh')).forEach(function (codeEl) {
+[].slice.apply(document.querySelectorAll('code.language-sh,code.lang-sh')).forEach(function (codeEl) {
   codeEl.innerHTML = codeEl.innerHTML.split('\n').map(function (line) {
     if (!line) return line;
     return line.substring(0, 2) === '$ ' ?
