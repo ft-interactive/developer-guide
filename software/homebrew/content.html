@@ -1,0 +1,25 @@
+<p>There are a few steps to setting this up, but it&#39;s worth it – Homebrew makes installing other tools much easier.</p>
+<h2>Setting up Homebrew</h2><h3>1. Before you start</h3><p>You&#39;ll need to have a recent XCode on your machine for Homebrew to work.</p>
+<ol>
+<li>Install or upgrade XCode using the Mac App Store (<a href="macappstores://itunes.apple.com/gb/app/xcode/id497799835">direct link</a>). This might take a while.</li>
+<li>Open XCode, accept the licence agreement, then quit XCode.</li>
+</ol>
+<h3>2. Install Homebrew</h3><p>Go to <a href="http://brew.sh/">brew.sh</a> and follow the instructions.</p>
+<pre><code class="language-md">TO COME: info about brew doctor, and verifying your PATH is set up right for brew
+</code></pre>
+<aside>
+Your system should now have the <code>brew</code> command. Verify this with <code>brew --version</code>.
+</aside>
+
+<h3>3. Install Homebrew Cask</h3><p>While <code>brew</code> is generally for installing command line tools, <code>brew cask</code> is for installing regular Mac apps like Firefox and Slack.</p>
+<p>To install Cask:</p>
+<pre><code class="language-sh">$ brew install caskroom/cask/brew-cask
+</code></pre>
+<hr>
+<h4>What does Homebrew Cask do?</h4><p>It will allow you to install <a href="http://caskroom.io/search">lots of Mac apps</a> as easily as this:</p>
+<pre><code class="language-sh">$ brew cask install firefox
+</code></pre>
+<p>More information: <a href="http://caskroom.io/">caskroom.io</a></p>
+<h2>Using Homebrew</h2><p>The <a href="https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme">Homebrew repo</a> has lots of documentation.</p>
+<pre><code class="language-md">do we need to add any IG-specific troubleshooting tips here?
+</code></pre>
