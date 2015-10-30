@@ -7,7 +7,57 @@ block prepend title
 block main
   .o-techdocs-content
     h1 Project Starter Kit
+    p.o-techdocs-leadbody A bunch of files to kick-start a new FT Interactive project.
+
     :marked
-      ```md
+      [Github repo](https://github.com/ft-interactive/project-starter-kit)
+
+      ## Setting up a new project
+
+      1. Create a new directory and `cd` into it:
+
+      ```sh
+      $ mkdir my-project
+      $ cd my-project
+      ```
+
+      2. Run this command to quickly scaffold a new project:
+
+      ```sh
+      $ curl -L https://raw.githubusercontent.com/ft-interactive/psk-quickstart/master/quickstart.bundled.js | node
+      ```
+
+      You now have a new project based on the starter kit, tracked by git.
+
+      ## Using it
+
+      ### Developing
+
+      Start the development server like this:
+
+      ```sh
+      $ npm start
+      ```
+
+      The command output should tell you what URL the dev server is running on – open it in your browser. (If you're using [iTerm](../software/iterm-2), you can <kbd>CMD+click</kbd> on the URL and it should open in your browser.)
+
+      While the dev server is running, you can edit files within `client` and your browser should refresh automatically.
+
+      For help with common tasks like using d3 or adding o-header, use the [recipes](https://github.com/ft-interactive/project-starter-kit/tree/master/docs/recipes) in the repo.
+
+
+      ### Building for production
+
+      Run this command to do a full production build:
+
+      ```sh
+      $ npm run build
+      ```
+
+      That will build a deployable copy of your app to the `dist` directory.
+
+      ### Deploying
+
+      ```
       TO COME
       ```
