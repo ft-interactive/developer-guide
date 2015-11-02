@@ -4,13 +4,10 @@
 <li>Install or upgrade XCode using the Mac App Store (<a href="macappstores://itunes.apple.com/gb/app/xcode/id497799835">direct link</a>). This might take a while.</li>
 <li>Open XCode, accept the licence agreement, then quit XCode.</li>
 </ol>
-<h3>2. Install Homebrew</h3><p>Go to <a href="http://brew.sh/">brew.sh</a> and follow the instructions.</p>
-<pre><code class="language-md">TO COME: info about brew doctor, and verifying your PATH is set up right for brew
-</code></pre>
-<aside>
-Your system should now have the <code>brew</code> command. Verify this with <code>brew --version</code>.
-</aside>
-
+<h3>2. Install Homebrew</h3><ol>
+<li>Go to <a href="http://brew.sh/">brew.sh</a> and follow the instructions to install it.</li>
+<li>Run <code>brew doctor</code> to diagnose any potential problems with how your system is set up. Try to follow its instructions to fix any problems. (Ask for help if needed.)</li>
+</ol>
 <h3>3. Install Homebrew Cask</h3><p>While <code>brew</code> is generally for installing command line tools, <code>brew cask</code> is for installing regular Mac apps like Firefox and Slack.</p>
 <p>To install Cask:</p>
 <pre><code class="language-sh">$ brew install caskroom/cask/brew-cask
@@ -21,5 +18,10 @@ Your system should now have the <code>brew</code> command. Verify this with <cod
 </code></pre>
 <p>More information: <a href="http://caskroom.io/">caskroom.io</a></p>
 <h2>Using Homebrew</h2><p>The <a href="https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme">Homebrew repo</a> has lots of documentation.</p>
-<pre><code class="language-md">do we need to add any IG-specific troubleshooting tips here?
-</code></pre>
+<p>Key points:</p>
+<ul>
+<li><p>it&#39;s a good idea to run <code>brew update</code> before <code>brew install XXXXX</code>. This downloads any recent &#39;formula&#39; changes from Homebrew (and these changes are happening all the time).</p>
+</li>
+<li><p>running <code>brew doctor</code> can help diagnose issues with your system.</p>
+</li>
+</ul>

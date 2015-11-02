@@ -1,0 +1,24 @@
+<h1>Linting</h1><p>Linters are tools that help to improve the <em>quality</em> of your code by alerting you to possible problems.</p>
+<p>Code might <em>work</em> in the browser but still have problems that will cause maintainance headaches later – it might have inconsistent indentation, or it might use &#39;bad&#39; parts of the language such as the loose equality operator in JavaScript. Linters are tools that automatically alert you to sloppy code so you can clean it up.</p>
+<p>We use the same linters that Origami uses:</p>
+<ul>
+<li><a href="http://eslint.org/">ESLint</a> for JavaScript</li>
+<li><a href="https://github.com/brigade/scss-lint">scss-lint</a> for Sass</li>
+</ul>
+<aside>
+NB. older projects used JSHint, not ESLint.
+</aside>
+
+
+<h2>Highlighting lint errors in your editor</h2><p>We recommend setting up your editor so it shows you lint errors while you work. This can take a bit of getting used to, but it helps catch bugs and keeps you aware of things you&#39;re going to need to clean up.</p>
+<p><img src="https://i.github-camo.com/70b6e697c9d793642414b4ea6d08dbb9678877b3/687474703a2f2f672e7265636f726469742e636f2f313352666d6972507a322e676966" alt="Lint highlighting in Atom"></p>
+<h3>Recommended packages</h3><p><strong>For Atom:</strong> <a href="https://atom.io/packages/linter">linter</a> + <a href="https://atom.io/packages/linter-eslint">linter-eslint</a> + <a href="https://atom.io/packages/linter-scss-lint">linter-scss-lint</a></p>
+<p><strong>For Sublime Text 3:</strong> <a href="https://packagecontrol.io/packages/SublimeLinter">SublimeLinter</a> + <a href="https://packagecontrol.io/packages/SublimeLinter-contrib-eslint">SublimeLinter-contrib-eslint</a> + <a href="https://packagecontrol.io/packages/SublimeLinter-contrib-scss-lint">SublimeLinter-contrib-scss-lint</a></p>
+<h2>Blocking your build if there are lint errors</h2><p>Linters should be seen as ‘helpful information’ while you&#39;re developing, and an ‘enforcement tool’ when you&#39;re building for production or committing code.</p>
+<ul>
+<li><p><strong>Don&#39;t</strong> let lint errors prevent you doing a development build of your code. For example, adding a <code>debugger;</code> statement to your code is a lint error (because you&#39;d never want that statement to appear in production), but you wouldn&#39;t want this lint error to block you from doing a development build, otherwise there would be no point in using the statement at all. As long as you <em>know</em> when you have lint errors in your code (e.g. by having them highlighted in your editor, or seeing them appear in your terminal while you&#39;re working), and as long as you clean them up before committing, it&#39;s OK for them to exist.</p>
+</li>
+<li><p><strong>Do</strong> set up your build sequence so production builds will fail if there are lint errors. (If you really need to quickly do a production build to fix a live emergency, and lint errors are just getting in the way, then of course it&#39;s OK to temporarily disable linting.)</p>
+</li>
+</ul>
+<p><strong>Projects started with the <a href="../project-starter-kit/">starter kit</a></strong> already follow the above advice – the development server (<code>npm start</code>) tells you about lint errors in your console, but lint errors don&#39;t block things building; the build script (<code>npm run build</code>) will refuse to continue if there are lint errors.</p>
