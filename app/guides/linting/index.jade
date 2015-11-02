@@ -2,10 +2,8 @@ include ../../_mixins.jade
 extends ../../_main-layout.jade
 
 block prepend title
-  | Atom
+  | Linting
 
 block main
   .o-techdocs-content
-    +softwareHeader('atom')
     include:marked content.md
-    +related('sublime-text-3')

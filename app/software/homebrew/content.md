@@ -11,15 +11,8 @@ You'll need to have a recent XCode on your machine for Homebrew to work.
 
 ### 2. Install Homebrew
 
-Go to [brew.sh](http://brew.sh/) and follow the instructions.
-
-```md
-TO COME: info about brew doctor, and verifying your PATH is set up right for brew
-```
-
-<aside>
-Your system should now have the `brew` command. Verify this with `brew --version`.
-</aside>
+1. Go to [brew.sh](http://brew.sh/) and follow the instructions to install it.
+2. Run `brew doctor` to diagnose any potential problems with how your system is set up. Try to follow its instructions to fix any problems. (Ask for help if needed.)
 
 ### 3. Install Homebrew Cask
 
@@ -48,6 +41,8 @@ More information: [caskroom.io](http://caskroom.io/)
 
 The [Homebrew repo](https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme) has lots of documentation.
 
-```md
-do we need to add any IG-specific troubleshooting tips here?
-```
+Key points:
+
+- it's a good idea to run `brew update` before `brew install XXXXX`. This downloads any recent 'formula' changes from Homebrew (and these changes are happening all the time).
+
+- running `brew doctor` can help diagnose issues with your system.

@@ -11,7 +11,7 @@ Alternatively, go to [iterm2.com](https://www.iterm2.com/) and install it manual
 
 ## Recommended settings
 
-It's usually helpful if it remembers your current location when you're in a new tab. To do this:
+It's usually helpful if it remembers your current location when you're in a new tab. If you want this:
 
 1. Open iTerm's Preferences
 2. Click Profiles
