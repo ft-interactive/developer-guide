@@ -1,11 +1,4 @@
-[Github repo](https://github.com/ft-interactive/project-starter-kit)
-
 ## Scaffolding a new project
-
-<aside>
-  <h5>Check your Node first</h5>
-  <p>Check with <kbd>node --version</kbd>. If it's lower than 4, [upgrade it](../../software/node/).</p>
-</aside>
 
 ### The quick way (Mac-only for now)
 
@@ -23,13 +16,13 @@ Just do what the [quickstart script](https://github.com/ft-interactive/psk-quick
 
 1. [Download a zip](https://github.com/ft-interactive/project-starter-kit/archive/master.zip) of the Project Starter Kit.
 
-2. Extract the zip. You should have a folder containing a bunch of files including `gulpfile.babel.js`. Rename the folder to something appropriate for your project.
+2. Extract the zip. You should have a folder containing a bunch of files (such as <kbd>gulpfile.babel.js</kbd>). Rename the folder to something appropriate for your project.
 
-3. Delete stuff you don't need: the `docs` folder and the `README.md`.
+3. Delete stuff you don't need: the <kbd>docs</kbd> folder and the <kbd>README.md</kbd>.
 
-4. Initialize it as a git repo (`git init`, or use SourceTree or something) and do an initial commit of all the files in the starter kit (e.g. `git add .` and `git commit -m "project-starter-kit"`, or use your GUI tool instead). This step is a good idea because it means you will always be able to compare with this first commit to quickly see which code *you've* written as opposed to what came with the starter kit.
+4. Initialize it as a git repo (<kbd>git init</kbd>, or use SourceTree or something) and do an initial commit of all the files in the starter kit (e.g. <kbd>git add .</kbd> and <kbd>git commit -m "project-starter-kit"</kbd> – or use your preferred GUI tool instead). This step is a good idea because it means you will always be able to compare with this first commit to quickly see which code *you've* written as opposed to what came with the starter kit.
 
-5. `cd` into your new project, and run `npm install`.
+5. <kbd>cd</kbd> into your new project, and run <kbd>npm install</kbd>.
 
 If that all finishes without errors, you're good to go.
 
@@ -42,11 +35,13 @@ Start the development server like this:
 $ npm start
 ```
 
-The command output should tell you where your dev server is running (the "Local" URL) – open this in your browser. (Tip: if you're using [iTerm](../software/iterm-2), you can simply <kbd>CMD+click</kbd> on the URL and it should open in your browser.)
+The command output should tell you where your dev server is running (the <kbd>Local</kbd> URL) – open this in your browser. (Tip: if you're using [iTerm](../software/iterm-2), you can simply <kbd>CMD+click</kbd> on the URL and it should open in your browser.)
 
-While the dev server is running, you can edit files within `client` and your browser should refresh automatically.
+While the dev server is running, you can edit files within <kbd>client</kbd> and your browser should refresh automatically.
 
 The automatic refreshing is done by [BrowserSync](http://www.browsersync.io/), which also magically syncs up scrolling and other events between multiple devices, making it easier to develop with a bunch of phones and tablets on your desk.
+
+Remember to commit often – see the [git workflow](../git-workflow/) guide.
 
 
 ## Building for production

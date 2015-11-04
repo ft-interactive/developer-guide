@@ -7,6 +7,15 @@ block prepend title
 block main
   .o-techdocs-content
     h1 Project Starter Kit
+
+    p: a(href='https://github.com/ft-interactive/project-starter-kit') github.com/ft-interactive/project-starter-kit
+
     p.o-techdocs-leadbody A bunch of files to kick-start a new FT Interactive project.
+
+    aside
+      :marked
+        ##### ⚡ Requires Node 4 or higher
+        
+        Check your Node version with <kbd>node --version</kbd>. If it's lower than 4, [upgrade it](../../software/node/).
 
     include:marked content.md
