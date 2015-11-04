@@ -15,37 +15,20 @@ Alternatively, go to [nodejs.org](https://nodejs.org/) and install it manually.
 
 Go to [nodejs.org](https://nodejs.org/) and install it manually.
 
-## Bonus steps
+
+## Upgrading from an old version
+
+You can simply install the latest version over your old one. Better still, install a version manager (see below) so you can switch between different versions easily.
+
+
+## 🎱 Bonus steps
 
 The next steps are not strictly necessary, but are recommended.
 
-### Avoid having to use sudo
+### Make your 'global' packages install in your user directory.
 
-```md
-TO COME
-```
+Follow [these steps](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) to relocate your global NODE_MODULES directory so it's inside your home directory. This means you won't have to use `sudo` when you install global modules (which makes installing modules safer and easier).
 
-### Upgrade your npm
-
-The version of `npm` that ships with Node is often out of date. Fortunately, npm is itself just an npm package. So you can use it to update itself:
-
-```sh
-$ npm install --global npm
-```
-
-### Check your install
-
-Check the versions of Node and npm. Hopefully you should have these versions or later.
-
-```sh
-$ node --version
-v4.1.2
-```
-
-```sh
-$ npm --version
-3.3.6
-```
 
 ### Install a version manager
 
@@ -58,4 +41,4 @@ There are two popular version managers for Node:
 - [**n**](https://github.com/tj/n)
 - [**nvm**](https://github.com/creationix/nvm)
 
-Use **n** if you're not sure.
+Use **n** if you're not sure; it seems to be more reliable, and its author is a genius.
