@@ -3,19 +3,9 @@
 </code></pre>
 <p>Alternatively, go to <a href="https://nodejs.org/">nodejs.org</a> and install it manually.</p>
 <h3>Windows</h3><p>Go to <a href="https://nodejs.org/">nodejs.org</a> and install it manually.</p>
-<h2>Bonus steps</h2><p>The next steps are not strictly necessary, but are recommended.</p>
-<h3>Avoid having to use sudo</h3><pre><code class="language-md">TO COME
-</code></pre>
-<h3>Upgrade your npm</h3><p>The version of <code>npm</code> that ships with Node is often out of date. Fortunately, npm is itself just an npm package. So you can use it to update itself:</p>
-<pre><code class="language-sh">$ npm install --global npm
-</code></pre>
-<h3>Check your install</h3><p>Check the versions of Node and npm. Hopefully you should have these versions or later.</p>
-<pre><code class="language-sh">$ node --version
-v4.1.2
-</code></pre>
-<pre><code class="language-sh">$ npm --version
-3.3.6
-</code></pre>
+<h2>Upgrading from an old version</h2><p>You can simply install the latest version over your old one. Better still, install a version manager (see below) so you can switch between different versions easily.</p>
+<h2>🎱 Bonus steps</h2><p>The next steps are not strictly necessary, but are recommended.</p>
+<h3>Make your &#39;global&#39; packages install in your user directory.</h3><p>Follow <a href="https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md">these steps</a> to relocate your global NODE_MODULES directory so it&#39;s inside your home directory. This means you won&#39;t have to use <code>sudo</code> when you install global modules (which makes installing modules safer and easier).</p>
 <h3>Install a version manager</h3><p>Sometimes you have to open an old project that requires an old version of Node, and it&#39;s a pain to have to uninstall and reinstall Node just for this purpose.</p>
 <p>A Node version manager lets you have multiple Nodes on your system at once, and switch between them with a simple command.</p>
 <p>There are two popular version managers for Node:</p>
@@ -23,4 +13,4 @@ v4.1.2
 <li><a href="https://github.com/tj/n"><strong>n</strong></a></li>
 <li><a href="https://github.com/creationix/nvm"><strong>nvm</strong></a></li>
 </ul>
-<p>Use <strong>n</strong> if you&#39;re not sure.</p>
+<p>Use <strong>n</strong> if you&#39;re not sure; it seems to be more reliable, and its author is a genius.</p>

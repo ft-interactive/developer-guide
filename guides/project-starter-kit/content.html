@@ -1,0 +1,53 @@
+<p><a href="https://github.com/ft-interactive/project-starter-kit">Github repo</a></p>
+<h2>Scaffolding a new project</h2><aside>
+  <h5>Check your Node first</h5>
+  <p>Check with <kbd>node --version</kbd>. If it&#39;s lower than 4, <a href="../../software/node/">upgrade it</a>.</p>
+</aside>
+
+<h3>The quick way (Mac-only for now)</h3><p>Make sure you&#39;re in an empty directory, then run the quickstart script:</p>
+<pre><code class="language-sh">$ curl -L https://raw.githubusercontent.com/ft-interactive/psk-quickstart/master/quickstart.bundled.js | node
+</code></pre>
+<p>You now have a new project based on the starter kit.</p>
+<h3>The slow way (any platform)</h3><p>Just do what the <a href="https://github.com/ft-interactive/psk-quickstart/blob/master/quickstart.js">quickstart script</a> does, which is:</p>
+<ol>
+<li><p><a href="https://github.com/ft-interactive/project-starter-kit/archive/master.zip">Download a zip</a> of the Project Starter Kit.</p>
+</li>
+<li><p>Extract the zip. You should have a folder containing a bunch of files including <code>gulpfile.babel.js</code>. Rename the folder to something appropriate for your project.</p>
+</li>
+<li><p>Delete stuff you don&#39;t need: the <code>docs</code> folder and the <code>README.md</code>.</p>
+</li>
+<li><p>Initialize it as a git repo (<code>git init</code>, or use SourceTree or something) and do an initial commit of all the files in the starter kit (e.g. <code>git add .</code> and <code>git commit -m &quot;project-starter-kit&quot;</code>, or use your GUI tool instead). This step is a good idea because it means you will always be able to compare with this first commit to quickly see which code <em>you&#39;ve</em> written as opposed to what came with the starter kit.</p>
+</li>
+<li><p><code>cd</code> into your new project, and run <code>npm install</code>.</p>
+</li>
+</ol>
+<p>If that all finishes without errors, you&#39;re good to go.</p>
+<h2>Developing your project</h2><p>Start the development server like this:</p>
+<pre><code class="language-sh">$ npm start
+</code></pre>
+<p>The command output should tell you where your dev server is running (the &quot;Local&quot; URL) – open this in your browser. (Tip: if you&#39;re using <a href="../software/iterm-2">iTerm</a>, you can simply <kbd>CMD+click</kbd> on the URL and it should open in your browser.)</p>
+<p>While the dev server is running, you can edit files within <code>client</code> and your browser should refresh automatically.</p>
+<p>The automatic refreshing is done by <a href="http://www.browsersync.io/">BrowserSync</a>, which also magically syncs up scrolling and other events between multiple devices, making it easier to develop with a bunch of phones and tablets on your desk.</p>
+<h2>Building for production</h2><p>Run this command to do a full production build:</p>
+<pre><code class="language-sh">$ npm run build
+</code></pre>
+<p>That will build a deployable copy of your app to the <code>dist</code> directory.</p>
+<h2>Deploying to the IG web server</h2><p>There&#39;s a deploy task that lets you easily upload the contents of your <code>dist</code> folder to the <a href="../../resources/ig-web-server/">IG web server</a>.</p>
+<h3>First-time preparation</h3><p>Before you deploy for the first time, you&#39;ll need to set your deploy target:</p>
+<ol>
+<li>Open <code>gulpfile.babel.js</code> and find the line <code>const deployTarget = &#39;&#39;;</code></li>
+<li>Set the value to an appropriate location for your project, such as <code>&#39;features/henry-rollins-profile&#39;</code>.<ul>
+<li>This is the location (relative to the public web root) where your project will be uploaded.</li>
+<li>Think of it as the <code>XXX</code> in <code>https://ig.ft.com/XXX/</code></li>
+<li><strong>Do not</strong> include a leading or trailing slash.</li>
+<li>See <a href="../naming-conventions">Naming conventions</a> for advice on picking a good project name, and for formatting.</li>
+</ul>
+</li>
+</ol>
+<h3>Deploying</h3><pre><code class="language-sh">$ npm run deploy
+</code></pre>
+<aside>
+<p>Remember: you&#39;ll generally want to <strong>build</strong> before you deploy. If you want to do both in one line:</p>
+<p><kbd>npm run build &amp;&amp; npm run deploy</kbd></p>
+</aside>
+

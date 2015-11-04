@@ -6,23 +6,12 @@
 <p>Alternatively, go to <a href="https://nodejs.org/">nodejs.org</a> and install it manually.</p>
 <h3 id="windows">Windows</h3>
 <p>Go to <a href="https://nodejs.org/">nodejs.org</a> and install it manually.</p>
-<h2 id="bonus-steps">Bonus steps</h2>
+<h2 id="upgrading-from-an-old-version">Upgrading from an old version</h2>
+<p>You can simply install the latest version over your old one. Better still, install a version manager (see below) so you can switch between different versions easily.</p>
+<h2 id="-bonus-steps">🎱 Bonus steps</h2>
 <p>The next steps are not strictly necessary, but are recommended.</p>
-<h3 id="avoid-having-to-use-sudo">Avoid having to use sudo</h3>
-<pre><code class="lang-md">TO COME
-</code></pre>
-<h3 id="upgrade-your-npm">Upgrade your npm</h3>
-<p>The version of <code>npm</code> that ships with Node is often out of date. Fortunately, npm is itself just an npm package. So you can use it to update itself:</p>
-<pre><code class="lang-sh">$ npm install --global npm
-</code></pre>
-<h3 id="check-your-install">Check your install</h3>
-<p>Check the versions of Node and npm. Hopefully you should have these versions or later.</p>
-<pre><code class="lang-sh">$ node --version
-v4.1.2
-</code></pre>
-<pre><code class="lang-sh">$ npm --version
-3.3.6
-</code></pre>
+<h3 id="make-your-global-packages-install-in-your-user-directory-">Make your &#39;global&#39; packages install in your user directory.</h3>
+<p>Follow <a href="https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md">these steps</a> to relocate your global NODE_MODULES directory so it&#39;s inside your home directory. This means you won&#39;t have to use <code>sudo</code> when you install global modules (which makes installing modules safer and easier).</p>
 <h3 id="install-a-version-manager">Install a version manager</h3>
 <p>Sometimes you have to open an old project that requires an old version of Node, and it&#39;s a pain to have to uninstall and reinstall Node just for this purpose.</p>
 <p>A Node version manager lets you have multiple Nodes on your system at once, and switch between them with a simple command.</p>
@@ -31,7 +20,7 @@ v4.1.2
 <li><a href="https://github.com/tj/n"><strong>n</strong></a></li>
 <li><a href="https://github.com/creationix/nvm"><strong>nvm</strong></a></li>
 </ul>
-<p>Use <strong>n</strong> if you&#39;re not sure.</p>
+<p>Use <strong>n</strong> if you&#39;re not sure; it seems to be more reliable, and its author is a genius.</p>
 <br/><br/><aside><h5>See also</h5><div data-o-grid-colspan="12 M10 L4"><a href="/software/homebrew/" class="o-techdocs-card"><div class="o-techdocs-card__context"><img src="https://image.webservices.ft.com/v1/images/raw/https%3A%2F%2Favatars0.githubusercontent.com%2Fu%2F1503512?source=interactive-dev-guide&amp;width=30&amp;height=30&amp;fit=contain" class="o-techdocs-card__icon"/><div class="o-techdocs-card__heading"><div class="o-techdocs-card__title">Homebrew</div></div></div><div class="o-techdocs-card__content">Package manager for installing developer tools on OS X</div></a></div></aside></div></div></div></div><footer class="o-techdocs-footer"><div class="o-techdocs-footer__inner"><p class="o-techdocs-footer__secondary"><a href="http://github.com/ft-interactive">FT Interactive on GitHub</a></p><p>© THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.</p></div></footer><script>// add aria-selected=true where appropriate
 [].slice.apply(document.querySelectorAll('.o-techdocs-nav a')).forEach(function (el) {
   if (el.getAttribute('href') === window.location.pathname) {
