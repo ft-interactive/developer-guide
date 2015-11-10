@@ -1,0 +1,9 @@
+include ../../_mixins.jade
+extends ../../_main-layout.jade
+
+block prepend title
+  | Multilanguage projects
+
+block main
+  .o-techdocs-content
+    include:marked content.md
