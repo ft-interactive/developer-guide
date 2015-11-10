@@ -3,14 +3,39 @@
 </code></pre>
 <p>Alternatively, go to <a href="https://nodejs.org/">nodejs.org</a> and install it manually.</p>
 <h3>Windows</h3><p>Go to <a href="https://nodejs.org/">nodejs.org</a> and install it manually.</p>
+<h2>Checking your installation</h2><p>You should now have two new commands available, <code>node</code> and <code>npm</code>. Try them out:</p>
+<pre><code class="language-sh">$ node --version
+v5.0.0
+$ npm --version
+3.3.12
+</code></pre>
+<p>(It&#39;s OK if your version numbers are higher.)</p>
 <h2>Upgrading from an old version</h2><p>You can simply install the latest version over your old one. Better still, install a version manager (see below) so you can switch between different versions easily.</p>
-<h2>🎱 Bonus steps</h2><p>The next steps are not strictly necessary, but are recommended.</p>
-<h3>Make your &#39;global&#39; packages install in your user directory.</h3><p>Follow <a href="https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md">these steps</a> to relocate your global NODE_MODULES directory so it&#39;s inside your home directory. This means you won&#39;t have to use <code>sudo</code> when you install global modules (which makes installing modules safer and easier).</p>
-<h3>Install a version manager</h3><p>Sometimes you have to open an old project that requires an old version of Node, and it&#39;s a pain to have to uninstall and reinstall Node just for this purpose.</p>
-<p>A Node version manager lets you have multiple Nodes on your system at once, and switch between them with a simple command.</p>
-<p>There are two popular version managers for Node:</p>
+<h2>Upgrading npm</h2><p>npm is the package manager for Node. It comes bundled with Node itself, but you might sometimes want to upgrade to a newer version if one is available. Because npm is itself an npm package, it can upgrade itself like this:</p>
+<pre><code class="language-sh">npm install --global npm
+</code></pre>
+<p>After that, <code>npm --version</code> should show that you&#39;re on the latest available version.</p>
+<h2>🎱 Bonus steps (for an optimal Node set-up)</h2><p>These extra steps are not essential, but are recommended.</p>
+<h3>Relocate your global packages to your home directory</h3><p>Follow <a href="https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md">these steps</a> to relocate your global <code>node_modules</code> directory so it&#39;s under your home directory.</p>
+<p>Doing this means you&#39;ll be able to install global modules without <code>sudo</code>, which is easier and safer.</p>
+<h3>Install a version manager</h3><p>Sometimes you have to open an old project that requires an old version of Node, and it&#39;s a pain to have to uninstall and reinstall Node just for this.</p>
+<p>A <strong>version manager</strong> solves this problem: it lets you easily switch between Node versions with a simple command. It also makes it easier to get the latest Node when they release a new version.</p>
+<p>There are two popular version managers available: <a href="https://github.com/tj/n"><strong>n</strong></a> and <a href="https://github.com/creationix/nvm"><strong>nvm</strong></a>.</p>
+<p>To install <strong>n</strong> (recommended):</p>
+<pre><code class="language-sh">npm install --global n
+</code></pre>
+<p>Now try switching to a different Node version (try <code>node --version</code> after each one, to verify that the version actually changed):</p>
 <ul>
-<li><a href="https://github.com/tj/n"><strong>n</strong></a></li>
-<li><a href="https://github.com/creationix/nvm"><strong>nvm</strong></a></li>
+<li>type <code>n 0.12</code> to switch to version 0.12</li>
+<li>type <code>n 4.2</code> to switch to version 4.2</li>
+<li>type <code>n stable</code> to switch to the latest stable version (this is the one you should generally stick to)</li>
 </ul>
-<p>Use <strong>n</strong> if you&#39;re not sure; it seems to be more reliable, and its author is a genius.</p>
+<aside>
+<h5>Notes on using <strong>n</strong></h5>
+
+<ul>
+<li>The first time you ask to switch to a particular Node version, it will take a couple of minutes, as <strong>n</strong> needs to download and install that version.
+<li>When you switch Node version, your npm version will often change with it.
+</ul>
+
+</aside>
