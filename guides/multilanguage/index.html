@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head><title>Multilanguage projects – FT Interactive Dev Guide</title><script src="https://polyfill.webservices.ft.com/v1/polyfill.min.js?features=default"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"><link rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=o-techdocs@^5.0.0,o-fonts@^1.8.2,o-grid@^4.0.0,o-forms@^2.0.0"><link rel="stylesheet" href="/main.css"><link rel="shortcut icon" href="http://bertha.ig.ft.com/favicon.ico"></head><body class="o-techdocs"><header data-o-component="o-header" class="o-header"><div class="o-header__container"><div class="o-header__inner"><div class="o-header__primary"><div class="o-header__primary__left"><a href="/" class="o-header__logo o-header__logo--ft"><abbr title="Financial Times">FT</abbr><h1 class="o-header__title">Interactive Dev Guide</h1></a></div></div></div></div></header><div class="o-techdocs-container"><div class="o-techdocs-layout"><div class="o-techdocs-sidebar"><ul class="o-techdocs-nav"><li><span>Machine setup</span><ul class="o-techdocs-nav o-techdocs-nav--sub"><li><a href="/setup/mac/">Mac OS X</a></li><li><a href="/setup/windows/">Windows</a></li></ul></li><li class="break-before"><span>Guides</span><ul class="o-techdocs-nav o-techdocs-nav--sub"><li><a href="/guides/project-lifecycle/">🚧 Project lifecycle</a></li><li><a href="/guides/publishing-checklist/">🚧 Publishing checklist</a></li><li><a href="/guides/style-guides/">🚧 Style guides</a></li><li><a href="/guides/naming-conventions/">🚧 Naming conventions</a></li><li><a href="/guides/git-workflow/">🚧 Git workflow</a></li><li><a href="/guides/linting/">Linting</a></li><li><a href="/guides/multilanguage/">Multilanguage projects</a></li><li><a href="/guides/analytics/">🚧 Analytics</a></li><li><a href="/guides/project-starter-kit/">Project Starter Kit</a></li></ul></li><li class="break-before"><span>Resources/services</span><ul class="o-techdocs-nav o-techdocs-nav--sub"><li><a href="/resources/ig-web-server/">🚧 IG web server</a></li><li><a href="/resources/bertha/">🚧 Bertha</a></li><li><a href="/resources/github/">🚧 Github</a></li><li><a href="/resources/stash/">🚧 Stash</a></li><li><a href="/resources/origami/">🚧 Origami</a></li><li><a href="/resources/image-service/">🚧 Image service</a></li><li><a href="/resources/polyfill-service/">🚧 Polyfill service</a></li></ul></li><li class="break-before"><a href="/formats/">Publication formats</a><ul class="o-techdocs-nav o-techdocs-nav--sub"><li><a href="/formats/static-sites/">🚧 Static sites/pages</a></li><li><a href="/formats/wrappers/">Falcon wrapper pages</a></li><li><a href="/formats/iframes/">🚧 iframes</a></li><li><a href="/formats/heroku/">🚧 Heroku apps</a></li></ul></li><li class="break-before"><span>Software</span><ul class="o-techdocs-nav o-techdocs-nav--sub"><li><a href="/software/atom/">Atom</a></li><li><a href="/software/git/">Git</a></li><li><a href="/software/cmder/">Cmder</a></li><li><a href="/software/github-desktop/">Github Desktop</a></li><li><a href="/software/homebrew/">Homebrew</a></li><li><a href="/software/iterm-2/">iTerm 2</a></li><li><a href="/software/node/">Node.js</a></li><li><a href="/software/sourcetree/">SourceTree</a></li><li><a href="/software/slack/">Slack</a></li><li><a href="/software/sublime-text-3/">Sublime Text 3</a></li></ul></li></ul></div><div class="o-techdocs-main"><div class="o-techdocs-content"><h1 id="multilanguage-projects">Multilanguage projects</h1>
+<p>Some projects are made in both English and Chinese versions.</p>
+<p>To help Google and other bots work out which version to show to users, each version should have a special <code>link</code> tag in the <code>head</code>.</p>
+<h2 id="examples">Examples</h2>
+<p>English page linking to the Chinese version:</p>
+<pre><code class="lang-html">&lt;link rel=&quot;alternate&quot; hreflang=&quot;zh-cn&quot; href=&quot;http://www.ftchinese.com/LINK/TO/CHINESE/VERSION&quot;&gt;
+</code></pre>
+<p>Chinese page linking to the English version:</p>
+<pre><code class="lang-html">&lt;link rel=&quot;alternate&quot; hreflang=&quot;en&quot; href=&quot;https://ig.ft.com/LINK/TO/ENGLISH/VERSION&quot;&gt;`
+</code></pre>
+</div></div></div></div><footer class="o-techdocs-footer"><div class="o-techdocs-footer__inner"><p class="o-techdocs-footer__secondary"><a href="http://github.com/ft-interactive">FT Interactive on GitHub</a></p><p>© THE FINANCIAL TIMES LTD. FT and 'Financial Times' are trademarks of The Financial Times Ltd.</p></div></footer><script>// add aria-selected=true where appropriate
+[].slice.apply(document.querySelectorAll('.o-techdocs-nav a')).forEach(function (el) {
+  if (el.getAttribute('href') === window.location.pathname) {
+    el.closest('li').setAttribute('aria-selected', 'true');
+  }
+});
+
+// make CLI snippets (any code blocks marked "sh") nicer using techdocs classes
+[].slice.apply(document.querySelectorAll('code.language-sh,code.lang-sh')).forEach(function (codeEl) {
+  codeEl.innerHTML = codeEl.innerHTML.split('\n').map(function (line) {
+    if (!line) return line;
+    return line.substring(0, 2) === '$ ' ?
+      '<kbd>' + line.substring(2) + '</kbd>' :
+      '<output>' + line + '</output>';
+  }).join('\n').trim();
+  codeEl.className = 'nohighlight';
+  codeEl.parentNode.className = 'cli';
+});
+</script><script src="https://build.origami.ft.com/bundles/js?modules=o-techdocs@^5.0.0,o-fonts@^1.8.2,o-grid@^4.0.0,o-forms@^2.0.0"></script></body></html>
