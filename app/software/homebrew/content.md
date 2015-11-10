@@ -22,7 +22,7 @@ $ sudo chown -R $(whoami) /usr/local
 
 ### 3. Install Homebrew Cask
 
-While `brew` is generally for installing command line tools, `brew cask` is for installing regular Mac apps like Firefox and Slack.
+While `brew` is generally used for installing command line tools, `brew cask` is for installing regular Mac apps like Firefox and Slack.
 
 To install Cask:
 
