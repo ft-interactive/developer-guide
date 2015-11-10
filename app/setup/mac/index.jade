@@ -14,13 +14,23 @@ block main
     h2#checklist Checklist
     +checklist(
       'Upgrade to the latest version of OS X if possible',
+      'Install iTerm 2 (or another good terminal emulator)',
       'Install Homebrew',
       'Install Node.js',
       'Install git',
-      'Install a good text editor'
+      'Install a good text editor',
     )
 
-    p We also recommend installing iTerm 2, plus a good visual git GUI such as Github Desktop.
+    p We also recommend installing a good visual git GUI such as Github Desktop.
+
+    h2#bonus Bonus steps
+
+    :marked
+      It's probably a good idea to do some work on your dotfiles to make them nicer.
+
+      Option 1 (adventurous): go for a git-managed dotfiles setup such as [this](https://github.com/paulirish/dotfiles).
+
+      Option 2 (minimal): just make your prompt nicer – add this [.bash_prompt](https://github.com/paulirish/dotfiles/blob/master/.bash_prompt) file to your home directory.
 
     h2#software Software
 

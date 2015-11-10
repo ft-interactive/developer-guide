@@ -20,6 +20,14 @@
         "image": "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
       },
 
+      "cmder": {
+        "title": "Cmder",
+        "description": "Portable console emulator for Windows",
+        "link": "http://cmder.net/",
+        "linkText": "cmder.net",
+        "image": "http://cmder.net/img/logo.svg"
+      },
+
       "github-desktop": {
         "title": "Github Desktop",
         "description": "Simple GUI tool for git",

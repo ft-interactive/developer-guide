@@ -1,0 +1,10 @@
+include ../../_mixins.jade
+extends ../../_main-layout.jade
+
+block prepend title
+  | Cmder
+
+block main
+  .o-techdocs-content
+    +softwareHeader('cmder')
+    include:marked content.md
