@@ -1,8 +1,8 @@
 # Multilanguage projects
 
-Some projects are made in both English and Chinese versions.
+Some of our projects are available in both English and Chinese versions.
 
-To help Google and other bots work out which version to show to users, each version should have a special `link` tag in the `head`.
+To help Google and other bots decide which version to show to users, each version should have a special `link` tag in the `head`.
 
 ## Examples
 

@@ -1,4 +1,4 @@
-There are a few steps to setting this up, but it's worth it – Homebrew makes installing other tools much easier.
+There are a few steps to setting this up, but it's worth it. Once you have Homebrew, installing other stuff is much easier.
 
 ## Setting up Homebrew
 
@@ -8,6 +8,12 @@ You'll need to have a recent XCode on your machine for Homebrew to work.
 
 1. Install or upgrade XCode using the Mac App Store ([direct link](macappstores://itunes.apple.com/gb/app/xcode/id497799835)). This might take a while.
 2. Open XCode, accept the licence agreement, then quit XCode.
+
+Also, take ownership of the `/usr/local` directory (inside which Homebrew needs full access) with this command:
+
+```sh
+$ sudo chown -R $(whoami) /usr/local
+```
 
 ### 2. Install Homebrew
 
@@ -28,7 +34,7 @@ $ brew install caskroom/cask/brew-cask
 
 #### What does Homebrew Cask do?
 
-It will allow you to install [lots of Mac apps](http://caskroom.io/search) as easily as this:
+It will allow you to install [lots of Mac apps](https://github.com/caskroom/homebrew-cask/tree/master/Casks) from the command line, like this:
 
 ```sh
 $ brew cask install firefox
@@ -39,10 +45,10 @@ More information: [caskroom.io](http://caskroom.io/)
 
 ## Using Homebrew
 
-The [Homebrew repo](https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme) has lots of documentation.
+The main things to know:
 
-Key points:
-
-- it's a good idea to run `brew update` before `brew install XXXXX`. This downloads any recent 'formula' changes from Homebrew (and these changes are happening all the time).
+- it's a good idea to run `brew update` before running `brew install XXXXX`. This downloads any recent formula changes from Homebrew (and these changes are happening all the time).
 
 - running `brew doctor` can help diagnose issues with your system.
+
+The [Homebrew repo](https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme) has lots more documentation.

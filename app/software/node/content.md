@@ -15,30 +15,71 @@ Alternatively, go to [nodejs.org](https://nodejs.org/) and install it manually.
 
 Go to [nodejs.org](https://nodejs.org/) and install it manually.
 
+## Checking your installation
+
+You should now have two new commands available, `node` and `npm`. Try them out:
+
+```sh
+$ node --version
+v5.0.0
+$ npm --version
+3.3.12
+```
+
+(It's OK if your version numbers are higher.)
 
 ## Upgrading from an old version
 
 You can simply install the latest version over your old one. Better still, install a version manager (see below) so you can switch between different versions easily.
 
+## Upgrading npm
 
-## 🎱 Bonus steps
+npm is the package manager for Node. It comes bundled with Node itself, but you might sometimes want to upgrade to a newer version if one is available. Because npm is itself an npm package, it can upgrade itself like this:
 
-The next steps are not strictly necessary, but are recommended.
+```sh
+npm install --global npm
+```
 
-### Make your 'global' packages install in your user directory.
+After that, `npm --version` should show that you're on the latest available version.
 
-Follow [these steps](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) to relocate your global NODE_MODULES directory so it's inside your home directory. This means you won't have to use `sudo` when you install global modules (which makes installing modules safer and easier).
+
+## 🎱 Bonus steps (for an optimal Node set-up)
+
+These extra steps are not essential, but are recommended.
+
+### Relocate your global packages to your home directory
+
+Follow [these steps](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) to relocate your global `node_modules` directory so it's under your home directory.
+
+Doing this means you'll be able to install global modules without `sudo`, which is easier and safer.
 
 
 ### Install a version manager
 
-Sometimes you have to open an old project that requires an old version of Node, and it's a pain to have to uninstall and reinstall Node just for this purpose.
+Sometimes you have to open an old project that requires an old version of Node, and it's a pain to have to uninstall and reinstall Node just for this.
 
-A Node version manager lets you have multiple Nodes on your system at once, and switch between them with a simple command.
+A **version manager** solves this problem: it lets you easily switch between Node versions with a simple command. It also makes it easier to get the latest Node when they release a new version.
 
-There are two popular version managers for Node:
+There are two popular version managers available: [**n**](https://github.com/tj/n) and [**nvm**](https://github.com/creationix/nvm).
 
-- [**n**](https://github.com/tj/n)
-- [**nvm**](https://github.com/creationix/nvm)
+To install **n** (recommended):
 
-Use **n** if you're not sure; it seems to be more reliable, and its author is a genius.
+```sh
+npm install --global n
+```
+
+Now try switching to a different Node version (try `node --version` after each one, to verify that the version actually changed):
+
+- type `n 0.12` to switch to version 0.12
+- type `n 4.2` to switch to version 4.2
+- type `n stable` to switch to the latest stable version (this is the one you should generally stick to)
+
+<aside>
+<h5>Notes on using **n**</h5>
+
+<ul>
+<li>The first time you ask to switch to a particular Node version, it will take a couple of minutes, as **n** needs to download and install that version.
+<li>When you switch Node version, your npm version will often change with it.
+</ul>
+
+</aside>
