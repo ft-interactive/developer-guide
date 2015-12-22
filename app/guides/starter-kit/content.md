@@ -14,9 +14,9 @@ It's a bunch of files you can use as a template for a new project. These files a
 
 ## How to start a new project
 
-### The quick way (Mac-only, for now)
+### The easy way
 
-If you haven't already got it, install [**startfrom**](https://github.com/callumlocke/startfrom):
+If you haven't already got it, install [startfrom]:
 
 ```sh
 $ npm install -g startfrom
@@ -30,9 +30,9 @@ $ startfrom ft-interactive/starter-kit
 
 If it finishes with the message "ALL DONE!", you should be good to go.
 
-### The manual way (works on any platform)
+### The manual way
 
-Just do what the [quickstart script](https://github.com/ft-interactive/psk-quickstart/blob/master/quickstart.js) does, which is:
+If you can't use [startfrom] for any reason, follow these manual steps:
 
 1. [Download a zip](https://github.com/ft-interactive/starter-kit/archive/master.zip) of the Starter Kit.
 
@@ -103,3 +103,4 @@ $ npm run deploy
 
 [IG web server]: ../../resources/ig-web-server/
 [Naming conventions]: ../naming-conventions
+[startfrom]: https://github.com/callumlocke/startfrom
