@@ -1,6 +1,6 @@
 ## What is the Starter Kit?
 
-It's simply a [repository on Github](https://github.com/ft-interactive/starter-kit) that you can use as a template for a new project. It's similar to Google's Web Starter Kit, but less generic and more FT.
+It's a bunch of files you can use as a template for a new project. These files are held in a [repository on Github](https://github.com/ft-interactive/starter-kit). It's similar to Google's Web Starter Kit, but less generic and more FT.
 
 ## What's included?
 
@@ -8,6 +8,9 @@ It's simply a [repository on Github](https://github.com/ft-interactive/starter-k
   + Sass – a language that compiles to CSS. It looks similar to CSS but has extra functionality.
   + Babel – converts ES2015 JavaScript to the more widely-supported ES5, so you can use [next-generation JavaScript features](https://babeljs.io/docs/learn-es2015/) today while still supporting older browsers.
   + Code minification and other optimisations.
+- An `index.html` with all our usual boilerplate (header, footer, analytics code, social media meta tags.).
+- Some basic Sass and JavaScript files to start you off.
+- Various configuration files for things like Origami and Bower.
 
 ## How to start a new project
 

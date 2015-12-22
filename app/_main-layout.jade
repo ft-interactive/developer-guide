@@ -19,6 +19,7 @@ html(lang="en")
               a.o-header__logo.o-header__logo--ft(href='/')
                 abbr(title='Financial Times') FT
                 h1.o-header__title= siteTitle
+            .edit-this-page.o-header__primary__featured
 
     .o-techdocs-container
       .o-techdocs-layout
@@ -97,5 +98,10 @@ html(lang="en")
         codeEl.className = 'nohighlight';
         codeEl.parentNode.className = 'cli';
       });
+
+      // add an edit link
+      var editLink = 'https://github.com/ft-interactive/ft-interactive.github.io/tree/production/app' + location.pathname;
+      document.querySelector('.edit-this-page').innerHTML = '<a href="' + editLink + '">Edit this page</a>';
+
 
     script(src="https://build.origami.ft.com/bundles/js?modules=" + oModules)
