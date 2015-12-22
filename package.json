@@ -1,7 +1,7 @@
 {
   "name": "ft-interactive.github.io",
   "devDependencies": {
-    "harp": "^0.19.0",
+    "harp": "^0.20.1",
     "jstransformer-marked": "^1.0.1"
   },
   "engines": {
