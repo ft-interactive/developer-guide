@@ -1,33 +1,50 @@
-## Scaffolding a new project
+## What is the Starter Kit?
 
-### The quick way (Mac-only for now)
+It's simply a [repository on Github](https://github.com/ft-interactive/starter-kit) that you can use as a template for a new project. It's similar to Google's Web Starter Kit, but less generic and more FT.
 
-Make sure you're in an empty directory, then run the quickstart script:
+## What's included?
+
+- A build system, so you can run tasks to process and optimise your code. This build system includes:
+  + Sass – a language that compiles to CSS. It looks similar to CSS but has extra functionality.
+  + Babel – converts ES2015 JavaScript to the more widely-supported ES5, so you can use [next-generation JavaScript features](https://babeljs.io/docs/learn-es2015/) today while still supporting older browsers.
+  + Code minification and other optimisations.
+
+## How to start a new project
+
+### The quick way (Mac-only, for now)
+
+If you haven't already got it, install [**startfrom**](https://github.com/callumlocke/startfrom):
 
 ```sh
-$ curl -L https://raw.githubusercontent.com/ft-interactive/psk-quickstart/master/quickstart.bundled.js | node
+$ npm install -g startfrom
 ```
 
-You now have a new project based on the starter kit.
+Then make sure you're in an empty directory, and run this:
 
-### The slow way (any platform)
+```sh
+$ startfrom ft-interactive/starter-kit
+```
+
+If it finishes with the message "ALL DONE!", you should be good to go.
+
+### The manual way (works on any platform)
 
 Just do what the [quickstart script](https://github.com/ft-interactive/psk-quickstart/blob/master/quickstart.js) does, which is:
 
-1. [Download a zip](https://github.com/ft-interactive/project-starter-kit/archive/master.zip) of the Project Starter Kit.
+1. [Download a zip](https://github.com/ft-interactive/starter-kit/archive/master.zip) of the Starter Kit.
 
 2. Extract the zip. You should have a folder containing a bunch of files (such as <kbd>gulpfile.babel.js</kbd>). Rename the folder to something appropriate for your project.
 
 3. Delete stuff you don't need: the <kbd>docs</kbd> folder and the <kbd>README.md</kbd>.
 
-4. Initialize it as a git repo (<kbd>git init</kbd>, or use SourceTree or something) and do an initial commit of all the files in the starter kit (e.g. <kbd>git add .</kbd> and <kbd>git commit -m "project-starter-kit"</kbd> – or use your preferred GUI tool instead). This step is a good idea because it means you will always be able to compare with this first commit to quickly see which code *you've* written as opposed to what came with the starter kit.
+4. Initialize it as a git repo (<kbd>git init</kbd>, or use SourceTree or something) and do an initial commit of all the files in the starter kit (e.g. <kbd>git add .</kbd> and <kbd>git commit -m "starter-kit"</kbd> – or use your preferred GUI tool instead). This step is a good idea because it means you will always be able to compare with this first commit to quickly see which code *you've* written as opposed to what came with the starter kit.
 
 5. <kbd>cd</kbd> into your new project, and run <kbd>npm install</kbd>.
 
 If that all finishes without errors, you're good to go.
 
 
-## Developing your project
+## Developing your app
 
 Start the development server like this:
 

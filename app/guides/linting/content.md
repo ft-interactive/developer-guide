@@ -36,10 +36,10 @@ Install one of these combinations of packages to get inline lint highlighting wo
 
 Linters should be seen as ‘helpful information’ while you're developing, and an ‘enforcement tool’ when you're building for production or committing code.
 
-- **Don't** let lint errors prevent you doing a development build of your code. This would make it unrealistically hard to do your job. For example, adding a `debugger;` statement to your code is a lint error (because you'd never want that statement to appear in production), but you wouldn't want this lint error to block you from doing a development build, otherwise there would be no point in using the statement at all. As long as you *know* when you have lint errors in your code (e.g. by having them highlighted in your editor, or seeing them appear in your terminal while you're working), and as long as you clean them up before committing, it's OK for them to exist.
+- **Don't** let lint errors prevent you doing a development build of your code. This would make it unrealistically hard to get things done. For example, having a `debugger;` statement in your code is a lint error (because you'd never want that statement to appear in production), but you might want to use this statement in development, so you can't have it blocking your development build. As long as you *know* when you have lint errors in your code (e.g. by having them highlighted in your editor, or seeing them appear in your terminal while you're working), and as long as you clean them up before committing, it's OK for them to exist.
 
 - **Do** set up your build sequence so production builds will fail if there are lint errors. (If you really need to quickly do a production build to fix a live emergency, and lint errors are just getting in the way, then of course it's OK to temporarily disable linting.)
 
-**Projects started with the [starter kit]** already follow the above advice – the development server (`npm start`) tells you about lint errors in your console while you're working, but these errors don't block things building; the build script (`npm run build`) on the other hand will refuse to continue if there are lint errors.
+**Projects started with the [Starter Kit]** already follow the above advice – the development server (`npm start`) tells you about lint errors in your console while you're working, but these errors don't block things building; the build script (`npm run build`) on the other hand will refuse to continue if there are lint errors.
 
-[starter kit]: ../project-starter-kit/
+[starter kit]: ../starter-kit/
