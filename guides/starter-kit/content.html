@@ -1,22 +1,34 @@
-<h2>Scaffolding a new project</h2><h3>The quick way (Mac-only for now)</h3><p>Make sure you&#39;re in an empty directory, then run the quickstart script:</p>
-<pre><code class="language-sh">$ curl -L https://raw.githubusercontent.com/ft-interactive/psk-quickstart/master/quickstart.bundled.js | node
+<h2>What is the Starter Kit?</h2><p>It&#39;s simply a <a href="https://github.com/ft-interactive/starter-kit">repository on Github</a> that you can use as a template for a new project. It&#39;s similar to Google&#39;s Web Starter Kit, but less generic and more FT.</p>
+<h2>What&#39;s included?</h2><ul>
+<li>A build system, so you can run tasks to process and optimise your code. This build system includes:<ul>
+<li>Sass – a language that compiles to CSS. It looks similar to CSS but has extra functionality.</li>
+<li>Babel – converts ES2015 JavaScript to the more widely-supported ES5, so you can use <a href="https://babeljs.io/docs/learn-es2015/">next-generation JavaScript features</a> today while still supporting older browsers.</li>
+<li>Code minification and other optimisations.</li>
+</ul>
+</li>
+</ul>
+<h2>How to start a new project</h2><h3>The quick way (Mac-only, for now)</h3><p>If you haven&#39;t already got it, install <a href="https://github.com/callumlocke/startfrom"><strong>startfrom</strong></a>:</p>
+<pre><code class="language-sh">$ npm install -g startfrom
 </code></pre>
-<p>You now have a new project based on the starter kit.</p>
-<h3>The slow way (any platform)</h3><p>Just do what the <a href="https://github.com/ft-interactive/psk-quickstart/blob/master/quickstart.js">quickstart script</a> does, which is:</p>
+<p>Then make sure you&#39;re in an empty directory, and run this:</p>
+<pre><code class="language-sh">$ startfrom ft-interactive/starter-kit
+</code></pre>
+<p>If it finishes with the message &quot;ALL DONE!&quot;, you should be good to go.</p>
+<h3>The manual way (works on any platform)</h3><p>Just do what the <a href="https://github.com/ft-interactive/psk-quickstart/blob/master/quickstart.js">quickstart script</a> does, which is:</p>
 <ol>
-<li><p><a href="https://github.com/ft-interactive/project-starter-kit/archive/master.zip">Download a zip</a> of the Project Starter Kit.</p>
+<li><p><a href="https://github.com/ft-interactive/starter-kit/archive/master.zip">Download a zip</a> of the Starter Kit.</p>
 </li>
 <li><p>Extract the zip. You should have a folder containing a bunch of files (such as <kbd>gulpfile.babel.js</kbd>). Rename the folder to something appropriate for your project.</p>
 </li>
 <li><p>Delete stuff you don&#39;t need: the <kbd>docs</kbd> folder and the <kbd>README.md</kbd>.</p>
 </li>
-<li><p>Initialize it as a git repo (<kbd>git init</kbd>, or use SourceTree or something) and do an initial commit of all the files in the starter kit (e.g. <kbd>git add .</kbd> and <kbd>git commit -m &quot;project-starter-kit&quot;</kbd> – or use your preferred GUI tool instead). This step is a good idea because it means you will always be able to compare with this first commit to quickly see which code <em>you&#39;ve</em> written as opposed to what came with the starter kit.</p>
+<li><p>Initialize it as a git repo (<kbd>git init</kbd>, or use SourceTree or something) and do an initial commit of all the files in the starter kit (e.g. <kbd>git add .</kbd> and <kbd>git commit -m &quot;starter-kit&quot;</kbd> – or use your preferred GUI tool instead). This step is a good idea because it means you will always be able to compare with this first commit to quickly see which code <em>you&#39;ve</em> written as opposed to what came with the starter kit.</p>
 </li>
 <li><p><kbd>cd</kbd> into your new project, and run <kbd>npm install</kbd>.</p>
 </li>
 </ol>
 <p>If that all finishes without errors, you&#39;re good to go.</p>
-<h2>Developing your project</h2><p>Start the development server like this:</p>
+<h2>Developing your app</h2><p>Start the development server like this:</p>
 <pre><code class="language-sh">$ npm start
 </code></pre>
 <p>The command output should tell you where your dev server is running (the <kbd>Local</kbd> URL) – open this in your browser. (Tip: if you&#39;re using <a href="../software/iterm-2">iTerm</a>, you can simply <kbd>CMD+click</kbd> on the URL and it should open in your browser.)</p>
