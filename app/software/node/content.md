@@ -30,7 +30,19 @@ $ npm --version
 
 ## Upgrading from an old version
 
-You can simply install the latest version over your old one. Better still, install a version manager (see below) so you can switch between different versions easily.
+You can simply install the latest version over your old one.
+
+On a Mac, update Homebrew first:
+
+```sh
+$ brew update
+```
+Then upgrade Node:
+
+```sh
+$ brew upgrade node
+```
+Better still, install a version manager (see below) so you can switch between different versions easily.
 
 ## Upgrading npm
 
@@ -67,7 +79,7 @@ To install **n** (recommended):
 ```sh
 npm install --global n
 ```
-
+  
 Now try switching to a different Node version (try `node --version` after each one, to verify that the version actually changed):
 
 - type `n 0.12` to switch to version 0.12
