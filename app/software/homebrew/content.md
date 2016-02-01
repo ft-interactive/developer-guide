@@ -20,21 +20,21 @@ $ sudo chown -R $(whoami) /usr/local
 1. Go to [brew.sh](http://brew.sh/) and follow the instructions to install it.
 2. Run `brew doctor` to diagnose any potential problems with how your system is set up. Try to follow its instructions to fix any problems. (Ask for help if needed.)
 
-### 3. Install Homebrew Cask
+### 3. Activate Homebrew Cask
 
-While `brew` is generally used for installing command line tools, `brew cask` is for installing regular Mac apps like Firefox and Slack.
+While `brew` is generally used for installing command line tools and other technical things, `brew cask` is for installing regular Mac apps like Firefox and Slack.
 
-To install Cask:
+To activate Cask:
 
 ```sh
-$ brew install caskroom/cask/brew-cask
+$ brew tap caskroom/cask
 ```
 
 ---
 
 #### What does Homebrew Cask do?
 
-It will allow you to install [lots of Mac apps](https://github.com/caskroom/homebrew-cask/tree/master/Casks) from the command line, like this:
+It allows you to install [lots of Mac apps](https://github.com/caskroom/homebrew-cask/tree/master/Casks) from the command line, like this:
 
 ```sh
 $ brew cask install firefox
