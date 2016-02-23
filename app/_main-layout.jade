@@ -5,11 +5,11 @@ html(lang="en")
       title
         block title
           = ' – FT ' + siteTitle
-      script(src="https://polyfill.webservices.ft.com/v1/polyfill.min.js?features=default")
+      script(src="https://cdn.polyfill.io/v2/polyfill.js?features=default")
       link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css")
-      link(rel="stylesheet" href="https://build.origami.ft.com/bundles/css?modules=" + oModules)
+      link(rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules=" + oModules)
       link(rel="stylesheet" href="/main.css")
-      link(rel="shortcut icon" href="http://bertha.ig.ft.com/favicon.ico")
+      link(rel="shortcut icon" href="https://ig.ft.com/favicon.ico")
   body.o-techdocs
     header.o-header(data-o-component='o-header')
       .o-header__container
@@ -104,4 +104,4 @@ html(lang="en")
       document.querySelector('.edit-this-page').innerHTML = '<a href="' + editLink + '">Edit this page</a>';
 
 
-    script(src="https://build.origami.ft.com/bundles/js?modules=" + oModules)
+    script(src="https://build.origami.ft.com/v2/bundles/js?modules=" + oModules)
